@@ -109,14 +109,14 @@ body {
 
 /* Custom Text Selection Color */
 ::selection {
-  background-color: #a3e635;
-  /* lime-400 */
+  background-color: #22d3ee;
+  /* cyan-400 */
   color: #000000;
 }
 
 ::-moz-selection {
-  background-color: #a3e635;
-  /* lime-400 */
+  background-color: #22d3ee;
+  /* cyan-400 */
   color: #000000;
 }
 

@@ -20,7 +20,7 @@ export const PROJECT_META = [
     slug: "web-portfolio",
     title: "Web Portfolio",
     category: "Interactive React Portfolio",
-    color: "bg-lime-400",
+    color: "bg-cyan-400",
     img: "/web_portfolio.png",
   },
 ];

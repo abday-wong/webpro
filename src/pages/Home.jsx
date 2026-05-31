@@ -67,7 +67,7 @@ export default function Home() {
   }, [navigate, location]);
 
   return (
-    <div className="bg-[#FAF9F6] text-black selection:bg-lime-400 selection:text-black relative">
+    <div className="bg-[#030303] text-neutral-100 selection:bg-cyan-400 selection:text-black relative">
       {isLoading && (
         <Preloader
           onComplete={() => {
