@@ -18,7 +18,7 @@ const DARK_SECTION_IDS = ['about-section', 'project-section', 'experience-sectio
 const Navbar = memo(function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isOnDarkSection, setIsOnDarkSection] = useState(false);
+  const isOnDarkSection = true;
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const previousBodyOverflowRef = useRef('');
   const menuStoppedLenisRef = useRef(false);
@@ -33,16 +33,6 @@ const Navbar = memo(function Navbar() {
       requestAnimationFrame(() => {
         const nextScrolled = window.scrollY > 50;
         setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
-
-        const probeY = 44;
-        const nextOnDark = DARK_SECTION_IDS.some((sectionId) => {
-          const el = document.getElementById(sectionId);
-          if (!el) return false;
-          const rect = el.getBoundingClientRect();
-          return rect.top <= probeY && rect.bottom >= probeY;
-        });
-        setIsOnDarkSection((prev) => (prev === nextOnDark ? prev : nextOnDark));
-
         ticking = false;
       });
     };
@@ -92,7 +82,7 @@ const Navbar = memo(function Navbar() {
 
       if (window.lenisInstance && typeof window.lenisInstance.scrollTo === 'function') {
         window.lenisInstance.scrollTo(target, {
-          offset: -24,
+          offset: -100,
           duration: 1.5,
           easing: exponentialEaseOut
         });
@@ -118,7 +108,7 @@ const Navbar = memo(function Navbar() {
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className={`group pointer-events-auto flex items-center gap-3 px-5 py-2.5 rounded-full backdrop-blur-md border transition-all duration-500 cursor-pointer ${isOnDarkSection ? 'bg-black/25 border-white/25 shadow-[0_8px_24px_rgba(0,0,0,0.22)]' : scrolled ? 'bg-white/80 border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.04)]' : 'bg-transparent border-transparent'}`}
+          className={`group pointer-events-auto flex items-center gap-3 px-5 py-2.5 rounded-full backdrop-blur-md border transition-all duration-500 cursor-pointer ${scrolled ? 'bg-black/80 border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.22)]' : 'bg-transparent border-transparent'}`}
         >
 
           <span className={`text-sm font-black tracking-[0.16em] md:tracking-[0.2em] uppercase transition-colors duration-300 ${isOnDarkSection ? 'text-white' : 'text-black'}`}>
@@ -132,7 +122,7 @@ const Navbar = memo(function Navbar() {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className={`w-11 h-11 flex items-center justify-center rounded-full backdrop-blur-md border transition-all duration-300 ${isMenuOpen ? 'bg-white/85 border-black/10 text-black shadow-[0_8px_24px_rgba(0,0,0,0.08)]' : isOnDarkSection ? 'bg-black/25 border-white/25 text-white shadow-[0_8px_24px_rgba(0,0,0,0.22)]' : scrolled ? 'bg-white/85 border-black/10 text-black shadow-[0_8px_24px_rgba(0,0,0,0.08)]' : 'bg-[#FAF9F6]/70 border-black/10 text-black'}`}
+          className={`w-11 h-11 flex items-center justify-center rounded-full backdrop-blur-md border transition-all duration-300 ${isMenuOpen ? 'bg-white/85 border-white/10 text-black shadow-[0_8px_24px_rgba(0,0,0,0.08)]' : 'bg-black/80 border-white/10 text-white shadow-[0_8px_24px_rgba(0,0,0,0.22)]'}`}
         >
           {isMenuOpen ? <X size={20} strokeWidth={2} /> : <Menu size={20} strokeWidth={2} />}
         </button>
@@ -211,7 +201,7 @@ const Navbar = memo(function Navbar() {
 
       {/* ── Desktop Menu (Floating Capsule with Gliding Pill) ── */}
       <div className={`hidden lg:flex items-center pointer-events-auto absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? 'top-6 scale-100' : 'top-8 scale-105'}`}>
-        <div className={`flex items-center p-1.5 backdrop-blur-xl border shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full relative transition-colors duration-500 ${isOnDarkSection ? 'bg-black/25 border-white/25' : 'bg-white/70 border-black/5'}`}>
+        <div className="flex items-center p-1.5 backdrop-blur-xl border shadow-[0_12px_40px_rgba(0,0,0,0.15)] rounded-full relative transition-colors duration-500 bg-black/80 border-white/10">
           {NAV_ITEMS.map((item, index) => (
             <Magnetic key={item.sectionId}>
               <button

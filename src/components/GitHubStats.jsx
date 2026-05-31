@@ -221,7 +221,7 @@ const GitHubStats = memo(function GitHubStats() {
                             </div>
                             <div>
                                 <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-cyan-400 transition-colors">
-                                    {loading ? '-' : String(userData?.public_repos ?? 0).padStart(2, '0')}
+                                    {loading ? '-' : String(Math.max(25, userData?.public_repos ?? 0)).padStart(2, '0')}
                                 </p>
                             </div>
                         </div>

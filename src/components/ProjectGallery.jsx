@@ -416,9 +416,9 @@ export default function ProjectGallery({ onOpenProject }) {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center shrink-0 h-[70vh] w-[40vw]"
+            className="flex flex-col justify-center shrink-0 h-[70vh] w-[45vw] min-w-[450px]"
           >
-            <h2 className="text-6xl lg:text-8xl font-black text-white uppercase leading-[0.92]">
+            <h2 className="text-5xl lg:text-7xl font-black text-white uppercase leading-[0.92] tracking-tighter">
               Past<br />
               <span className="text-cyan-400">Explorations</span>
             </h2>

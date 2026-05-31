@@ -13,7 +13,7 @@ const Footer = memo(function Footer() {
 
     if (window.lenisInstance && typeof window.lenisInstance.scrollTo === 'function') {
       window.lenisInstance.scrollTo(target, {
-        offset: -24,
+        offset: -100,
         duration: 1.5,
         easing: exponentialEaseOut
       });
