@@ -1,13 +1,13 @@
 import { memo } from 'react';
 
 const skills = [
-  'Machine Learning',
-  'Deep Learning',
-  'Computer Vision',
-  'Natural Language Processing (NLP)',
-  'Machine Learning Operations (MLOps)',
-  'Data Analysis',
-  'Web Development',
+  'Flutter Development',
+  'Mobile Applications',
+  'Web Engineering',
+  'Frontend Development',
+  'Backend Architecture',
+  'Database Management',
+  'Software Engineering',
 ];
 
 const MarqueeBanner = memo(function MarqueeBanner() {

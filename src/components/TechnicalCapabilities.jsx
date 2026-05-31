@@ -1,15 +1,14 @@
 import { memo, useRef, useState, useEffect } from 'react';
 import { Gsap, useGsapInView } from '../utils/gsapAnimate';
-import { Cpu, Network, Eye, MessageSquare, Infinity, BarChart2, MonitorSmartphone } from 'lucide-react';
+import { Cpu, Network, Eye, MessageSquare, Infinity, BarChart2, MonitorSmartphone, Smartphone, Database, Code2 } from 'lucide-react';
 
 const CAPABILITIES = [
-  { title: 'Machine Learning', desc: 'Predictive modeling, regression, and algorithmic classification built for scale.', icon: BarChart2 },
-  { title: 'Deep Learning', desc: 'Neural architectures for complex pattern recognition and high-accuracy deployments.', icon: Network },
-  { title: 'Computer Vision', desc: 'Image processing, real-time object detection, and robust spatial analytics.', icon: Eye },
-  { title: 'NLP & GenAI', desc: 'Large language models, semantic analysis, and human-like conversational AI.', icon: MessageSquare },
-  { title: 'MLOps', desc: 'End-to-end model deployment frameworks, continuous monitoring, and automation.', icon: Infinity },
-  { title: 'Data Analysis', desc: 'Advanced statistical modeling, big data wrangling, and actionable visualizations.', icon: Cpu },
-  { title: 'Web Engineering', desc: 'Scalable full-stack systems with ultra-responsive, accessible interfaces.', icon: MonitorSmartphone },
+  { title: 'Mobile Development', desc: 'Crafting responsive cross-platform mobile applications with Flutter and Dart.', icon: Smartphone },
+  { title: 'Web Engineering', desc: 'Scalable full-stack systems with ultra-responsive, accessible web interfaces.', icon: MonitorSmartphone },
+  { title: 'Backend Architectures', desc: 'Designing secure server environments, REST APIs, and microservices.', icon: Network },
+  { title: 'Database Design', desc: 'Optimizing structured data layers with MySQL, PostgreSQL, and SQLite.', icon: Database },
+  { title: 'State Management', desc: 'Implementing clean state flows and persistent local storage caching.', icon: Cpu },
+  { title: 'Software Design', desc: 'Structuring clean, modular, and maintainable Object-Oriented codebases.', icon: Code2 },
 ];
 
 const TechnicalCapabilities = memo(function TechnicalCapabilities() {

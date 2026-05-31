@@ -29,13 +29,13 @@ const experiences = [
   },
   {
     company: 'ASAH (led by Dicoding x Accenture)',
-    role: 'Machine Learning Cohort',
+    role: 'Software Development Cohort',
     period: 'Aug 2025 - Jan 2026',
-    impact: 'Served as project manager during the capstone phase and improved team execution by 70%.',
-    stack: ['Project Leadership', 'ML Product', 'React', 'Stakeholder Sync'],
+    impact: 'Served as project manager during the capstone phase, coordinating React developers and backend systems.',
+    stack: ['Project Leadership', 'Full-Stack Dev', 'React', 'Agile Methodologies'],
     description: [
-      'Acted as project manager during capstone, leading a cross-functional team of 5 machine learning engineers and React developers.',
-      'Managed the development of a banking sales prediction portal to prioritize high-probability leads and reduce low-value outreach.',
+      'Acted as project manager during capstone, leading a cross-functional team of developers to build a banking web portal.',
+      'Managed the integration of predictive backend analytics with a React frontend to deliver actionable business insights.',
       'Coordinated timelines and technical workflows across functions to improve delivery speed and reliability.',
     ],
   },
@@ -52,14 +52,14 @@ const experiences = [
   },
   {
     company: 'PIJAK (led by Dicoding x IBM)',
-    role: 'AI Engineer Cohort',
+    role: 'Software Engineer Trainee',
     period: 'Jan 2026 - Present',
-    impact: 'Selected participant in the PIJAK AI Engineer cohort.',
-    stack: ['Python', 'Generative AI', 'Deep Learning', 'AI Ethics'],
+    impact: 'Selected participant in the software engineering and cloud track under IBM SkillsBuild.',
+    stack: ['Python', 'Cloud Services', 'Software Design', 'Databases'],
     description: [
-      'Joined an intensive AI Engineer cohort focused on Generative AI, Deep Learning, and AI Ethics.',
-      'Developing advanced AI solutions with Python and industry-standard practices from the IBM SkillsBuild curriculum.',
-      'Building capstone-ready systems for real-world AI implementation challenges.',
+      'Selected to undergo intensive training in software design patterns, Python engineering, and cloud application fundamentals.',
+      'Developing full-stack server solutions with Python following standard practices from the IBM SkillsBuild curriculum.',
+      'Building capstone-ready web and mobile backends for real-world business implementation challenges.',
     ],
   },
 ];
@@ -205,7 +205,7 @@ const ProfessionalExperience = () => {
             </h2>
 
             <p className="mt-5 text-[14px] md:text-[15px] font-light leading-[1.8] text-black/60 max-w-[320px]">
-              Selected roles across AI cohorts, data analytics, and mentoring. Each step adds stronger delivery habits, leadership, and product clarity.
+              Selected roles across software development, data analytics, and mentoring. Each step adds stronger delivery habits, leadership, and product clarity.
             </p>
 
             <div className="mt-7 grid grid-cols-2 gap-2.5">

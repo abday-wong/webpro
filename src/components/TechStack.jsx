@@ -4,14 +4,6 @@ import { Gsap } from "../utils/gsapAnimate";
 // Simple Icons (brand icons) from react-icons
 import {
     SiPython,
-    SiTensorflow,
-    SiPytorch,
-    SiKeras,
-    SiScikitlearn,
-    SiOpencv,
-    SiStreamlit,
-    SiNumpy,
-    SiPandas,
     SiReact,
     SiNextdotjs,
     SiTailwindcss,
@@ -24,30 +16,29 @@ import {
     SiMysql,
     SiSupabase,
     SiDocker,
-
     SiGit,
     SiLinux,
+    SiFlutter,
+    SiDart,
+    SiFirebase,
+    SiSqlite,
 } from "react-icons/si";
 
+import { FaJava } from "react-icons/fa";
+
 // Lucide icons for generic concepts
-import { Bot, BrainCircuit, Workflow, Globe, Cloud } from "lucide-react";
+import { Smartphone, Code2, Database, Globe, Cloud } from "lucide-react";
 
 const stackCategories = [
     {
-        title: "AI & Machine Learning",
-        description: "Intelligent systems & models",
+        title: "Mobile Development",
+        description: "Cross-platform mobile apps",
         skills: [
-            { name: "Python", icon: SiPython },
-            { name: "TensorFlow", icon: SiTensorflow },
-            { name: "PyTorch", icon: SiPytorch },
-            { name: "Keras", icon: SiKeras },
-            { name: "Scikit-Learn", icon: SiScikitlearn },
-            { name: "OpenCV", icon: SiOpencv },
-            { name: "Streamlit", icon: SiStreamlit },
-            { name: "Numpy", icon: SiNumpy },
-            { name: "Pandas", icon: SiPandas },
-            { name: "RAG", icon: BrainCircuit },
-            { name: "LLM", icon: Bot },
+            { name: "Flutter", icon: SiFlutter },
+            { name: "Dart", icon: SiDart },
+            { name: "Java", icon: FaJava },
+            { name: "SQLite", icon: SiSqlite },
+            { name: "Firebase", icon: SiFirebase },
         ]
     },
     {
@@ -63,24 +54,23 @@ const stackCategories = [
         ]
     },
     {
-        title: "Backend & API",
-        description: "Scalable server architectures",
+        title: "Backend & Databases",
+        description: "API servers & database logic",
         skills: [
-            { name: "FastAPI", icon: SiFastapi },
-            { name: "ExpressJS", icon: SiExpress },
-            { name: "PostgreSQL", icon: SiPostgresql },
             { name: "MySQL", icon: SiMysql },
+            { name: "PostgreSQL", icon: SiPostgresql },
             { name: "Supabase", icon: SiSupabase },
+            { name: "ExpressJS", icon: SiExpress },
+            { name: "FastAPI", icon: SiFastapi },
+            { name: "Python", icon: SiPython },
             { name: "REST APIs", icon: Globe },
         ]
     },
     {
-        title: "DevOps & Cloud",
-        description: "Infrastructure & deployment",
+        title: "DevOps & Tools",
+        description: "Version control & environments",
         skills: [
             { name: "Docker", icon: SiDocker },
-            { name: "Microsoft Azure", icon: Cloud },
-            { name: "MLOps", icon: Workflow },
             { name: "Git", icon: SiGit },
             { name: "Linux", icon: SiLinux },
         ]
@@ -133,7 +123,7 @@ const TechStack = () => {
                             className="mt-6 md:mt-8 font-sans text-sm md:text-base text-white/55 leading-7 md:leading-8 max-w-sm"
                         >
                             <p>
-                                An ecosystem of tools and architectures mastered for building scalable, intelligent, and high-performance digital solutions. Full engineering proficiency.
+                                An ecosystem of tools and architectures mastered for building scalable, interactive, and high-performance digital solutions. Full engineering proficiency.
                             </p>
                         </Gsap.div>
                     </div>
