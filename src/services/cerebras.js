@@ -4,7 +4,7 @@ const API_KEY = (
     import.meta.env.VITE_CEREBRAS_API_KEY ||
     import.meta.env.REACT_APP_CEREBRAS_API_KEY ||
     ''
-).trim();
+).trim().replace(/^\ufeff/, '');
 
 // Use proxy in production to avoid CORS, direct API in local dev
 const CEREBRAS_CHAT_COMPLETIONS_URL =
