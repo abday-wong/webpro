@@ -5,29 +5,6 @@ import { Plus, Calendar, Building2, Sparkles, ArrowUpRight } from 'lucide-react'
 
 const experiences = [
   {
-    company: 'GDSC Udinus',
-    role: 'Developer Community',
-    period: 'Nov 2023 - Nov 2025',
-    impact: 'Contributed to 5+ technical discussions across 4 collaborative projects.',
-    stack: ['Community', 'Workshops', 'Collaboration'],
-    description: [
-      'Actively participated in workshops, technical events, and collaborative learning sessions.',
-      'Contributed insights around development and analytics in community-driven projects.',
-    ],
-  },
-  {
-    company: 'Blockvizo',
-    role: 'Data Analyst',
-    period: 'Jun 2024 - Jul 2025',
-    impact: 'Improved forecasting accuracy by 35% and cut analysis time by 40%.',
-    stack: ['Data Analysis', 'Dashboards', 'Web3 Analytics', 'Predictive Modeling'],
-    description: [
-      'Processed 50,000+ game hash history records to model item-drop probability behavior.',
-      'Built actionable dashboards for decentralized projects, enabling faster and more confident decisions.',
-      'Specialized in predictive airdrop and winning probability analysis across 10+ Web3 ecosystems.',
-    ],
-  },
-  {
     company: 'ASAH (led by Dicoding x Accenture)',
     role: 'Software Development Cohort',
     period: 'Aug 2025 - Jan 2026',
@@ -37,17 +14,6 @@ const experiences = [
       'Acted as project manager during capstone, leading a cross-functional team of developers to build a banking web portal.',
       'Managed the integration of predictive backend analytics with a React frontend to deliver actionable business insights.',
       'Coordinated timelines and technical workflows across functions to improve delivery speed and reliability.',
-    ],
-  },
-  {
-    company: 'Programming Lab',
-    role: 'Lab Assistant',
-    period: 'Aug 2025 - Present',
-    impact: 'Mentored 110+ junior students through practical engineering sessions.',
-    stack: ['Teaching', 'Mentorship', 'Software Fundamentals'],
-    description: [
-      'Assisted in 3+ weekly academic lab sessions for programming and software engineering courses.',
-      'Mentored around 110 junior students in problem solving, practical exercises, and core programming concepts.',
     ],
   },
   {

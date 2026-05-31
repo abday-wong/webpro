@@ -255,7 +255,7 @@ Here's the short version:
 
 - **PIJAK Software Engineer Trainee** (Jan 2026 - Present): focus on **Python** and **Software Design**
 - **ASAH Software Development Cohort** (Aug 2025 - Jan 2026): **Project Manager** for a banking web portal
-- **Lab Assistant** (Aug 2025 - Present): mentor **110+ students**
+
 
 If you want, ask "more detail" and I can expand.
 
