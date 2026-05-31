@@ -17,15 +17,16 @@ export default async function handler(req) {
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
     });
   }
 
-  const apiKey = process.env.VITE_CEREBRAS_API_KEY;
-  if (!apiKey) {
-    return new Response(JSON.stringify({ error: 'Missing API key' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
+  // Try both env var names — VITE_ prefix is for client builds, plain name is more reliable for Edge
+  const apiKey = process.env.CEREBRAS_API_KEY || process.env.VITE_CEREBRAS_API_KEY || '';
+  if (!apiKey.trim()) {
+    return new Response(JSON.stringify({ error: 'Missing API key on server' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
     });
   }
 
