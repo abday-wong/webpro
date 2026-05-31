@@ -6,11 +6,7 @@ const API_KEY = (
     ''
 ).trim().replace(/^\ufeff/, '');
 
-// Use proxy in production to avoid CORS, direct API in local dev
-const CEREBRAS_CHAT_COMPLETIONS_URL =
-    typeof window !== 'undefined' && window.location.hostname !== 'localhost'
-        ? '/api/chat'
-        : 'https://api.cerebras.ai/v1/chat/completions';
+const CEREBRAS_CHAT_COMPLETIONS_URL = 'https://api.cerebras.ai/v1/chat/completions';
 
 
 // Error classification for granular UI feedback
