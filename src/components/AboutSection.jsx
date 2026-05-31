@@ -175,9 +175,9 @@ const AboutSection = memo(function AboutSection() {
                 <div className="absolute inset-0 bg-neutral-900/[0.12] group-hover:bg-transparent transition-colors duration-700 z-10 mix-blend-multiply pointer-events-none" />
 
                 <picture>
-                  <source srcSet="/profilee.webp" type="image/webp" />
+                  <source srcSet="/profile.webp" type="image/webp" />
                   <img
-                    src="/profilee.webp"
+                    src="/profile.webp"
                     alt={PORTFOLIO_DATA.profile.name}
                     loading="lazy"
                     decoding="async"
