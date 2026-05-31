@@ -22,6 +22,7 @@ import {
     SiDart,
     SiFirebase,
     SiSqlite,
+    SiFigma,
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
@@ -67,11 +68,12 @@ const stackCategories = [
         ]
     },
     {
-        title: "DevOps & Tools",
-        description: "Version control & environments",
+        title: "Design & Tools",
+        description: "UI/UX prototypes & environments",
         skills: [
-            { name: "Docker", icon: SiDocker },
+            { name: "Figma", icon: SiFigma },
             { name: "Git", icon: SiGit },
+            { name: "Docker", icon: SiDocker },
             { name: "Linux", icon: SiLinux },
         ]
     }

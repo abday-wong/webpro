@@ -30,11 +30,12 @@ export const PORTFOLIO_DATA = {
             ]
         },
         {
-            title: "Independent UI/UX Enthusiast",
+            title: "Independent UI/UX Designer",
             period: "2024 - Present",
             description: [
-                "Exploring advanced mobile UI paradigms, specializing in Neo-Brutalist aesthetic and glassmorphism interface designs.",
-                "Creating layouts in Figma and translating them pixel-for-pixel into clean, maintainable Flutter widgets."
+                "Designing high-fidelity interactive wireframes, UI mockups, and components in Figma.",
+                "Translating Figma design system specs pixel-for-pixel into clean, maintainable Flutter widgets.",
+                "Exploring advanced mobile UI paradigms, specializing in Neo-Brutalist and glassmorphic designs."
             ]
         }
     ],
@@ -86,7 +87,7 @@ export const PORTFOLIO_DATA = {
     ],
     capabilities: [
         "Flutter & Dart Development",
-        "Mobile App UI/UX Design",
+        "UI/UX Design & Prototyping (Figma)",
         "Neo-Brutalist Design Concepts",
         "State Management (Provider)",
         "Local Persistence & Notifications",
