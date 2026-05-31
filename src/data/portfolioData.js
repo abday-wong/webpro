@@ -4,7 +4,7 @@ export const PORTFOLIO_DATA = {
         role: "Computer Science Engineering Student & Flutter Developer",
         bio: "I'm a Computer Science Engineering student and Flutter developer passionate about crafting beautiful mobile experiences. I specialize in Neo-Brutalist UI design and building apps that are both functional and visually striking. Currently based in West Java, Indonesia, I love turning complex problems into elegant solutions.",
         location: "West Java, Indonesia",
-        email: "abdaywong@gmail.com",
+        email: "abday.hafidz23@gmail.com",
         socials: {
             github: "https://github.com/abday-wong",
             instagram: "https://www.instagram.com/amamiya_day?igsh=YnJ6NDhuZmZud3lu",
