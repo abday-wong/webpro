@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Gsap } from "../utils/gsapAnimate";
 
-// Simple Icons (brand icons) from react-icons
+
 import {
     SiPython,
     SiReact,
@@ -27,7 +27,7 @@ import {
 
 import { FaJava } from "react-icons/fa";
 
-// Lucide icons for generic concepts
+
 import { Smartphone, Code2, Database, Globe, Cloud } from "lucide-react";
 
 const stackCategories = [
@@ -87,7 +87,7 @@ const TechStack = () => {
 
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 
-                {/* ── SECTION HEADER ── */}
+                {}
                 <Gsap.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -101,10 +101,10 @@ const TechStack = () => {
                     <div className="flex-1 h-[1px] bg-white/10" />
                 </Gsap.div>
 
-                {/* Main Content Area */}
+                {}
                 <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:gap-24 items-start">
 
-                    {/* Left side: Sticky Title area */}
+                    {}
                     <div className="lg:sticky lg:top-36 flex flex-col pt-4">
                         <Gsap.h2
                             initial={{ opacity: 0, x: -30 }}
@@ -130,7 +130,7 @@ const TechStack = () => {
                         </Gsap.div>
                     </div>
 
-                    {/* Right side: Table List */}
+                    {}
                     <div className="flex flex-col border-t border-white/10">
                         {stackCategories.map((category, index) => (
                             <Gsap.div
@@ -160,7 +160,7 @@ const TechStack = () => {
                                                 title={skill.name}
                                             >
                                                 <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-white/60 group-hover:text-white/80 group-hover/icon:text-cyan-400 transition-colors" />
-                                                {/* Tooltip */}
+                                                {}
                                                 <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-white text-black text-[10px] font-mono font-bold uppercase tracking-wider rounded whitespace-nowrap opacity-0 group-hover/icon:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
                                                     {skill.name}
                                                 </span>

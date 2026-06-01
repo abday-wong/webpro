@@ -1,8 +1,8 @@
-// --- Project Detail Data ---
-// Pure data objects extracted from project detail components.
-// This file is imported by aiContext.js and ChatWidget.jsx so that
-// the React components (with JSX) remain lazily loaded and don't
-// get pulled into the ChatWidget bundle.
+
+
+
+
+
 
 export const PROJECT_DETAILS_DATA = {
   yoknabung: {

@@ -2,7 +2,7 @@ import { memo, useRef, useState, useEffect } from 'react';
 import { Gsap, useGsapReducedMotion, useGsapScroll, useGsapTransform } from '../utils/gsapAnimate';
 import { Terminal, Code2, Database, Cpu, Download, ArrowUpRight } from 'lucide-react';
 
-// Shared Intl formatter — created once, reused on every tick
+
 const jakartaFormatter = new Intl.DateTimeFormat('en-US', {
   timeZone: 'Asia/Jakarta',
   hour: '2-digit',
@@ -11,8 +11,8 @@ const jakartaFormatter = new Intl.DateTimeFormat('en-US', {
   hour12: true,
 });
 
-// === LOCATION & TIME BADGE ===
-// Uses direct DOM update via ref to avoid React re-renders every second
+
+
 const LocationTimeBadge = () => {
   const timeRef = useRef(null);
 
@@ -41,7 +41,7 @@ const LocationTimeBadge = () => {
   );
 };
 
-// === DECORATIVE ORBITING ELEMENTS (Left & Right) ===
+
 const OrbitingDecoration = ({ icon: Icon, delay, className, isRevealed, enableAmbientMotion }) => (
   <Gsap.div
     initial={false}
@@ -66,7 +66,7 @@ const OrbitingDecoration = ({ icon: Icon, delay, className, isRevealed, enableAm
   </Gsap.div>
 );
 
-// === MAIN COMPONENT ===
+
 const HeroSection = memo(function HeroSection({ isRevealed = true }) {
   const containerRef = useRef(null);
   const reduceMotion = useGsapReducedMotion();
@@ -78,7 +78,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
     offset: ["start start", "end start"],
   });
 
-  // Subtle scroll parallax
+  
   const bgY = useGsapTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const contentY = useGsapTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
@@ -118,7 +118,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
       id="hero-section"
       className="min-h-[100svh] w-full relative bg-[#030303] selection:bg-cyan-300 selection:text-black overflow-hidden flex flex-col items-center justify-center pt-16 pb-16"
     >
-      {/* ── BACKGROUND ENGINEERING Grid & Dynamic Glow ── */}
+      {}
       <Gsap.div
         initial={false}
         animate={isRevealed ? { opacity: 1 } : { opacity: 0 }}
@@ -129,7 +129,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.12),transparent_48%),linear-gradient(to_bottom,rgba(34,211,238,0.04),transparent_48%)]" />
 
-        {/* 1. Base Moving Grid */}
+        {}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -139,7 +139,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           }}
         />
 
-        {/* 2. Plus/Cross Pattern overlay */}
+        {}
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{
@@ -158,7 +158,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[920px] max-h-[920px] rounded-full border border-cyan-500/10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72vw] h-[72vw] max-w-[720px] max-h-[720px] rounded-full border border-cyan-500/10" />
 
-        {/* 3. Dynamic Organic Glowing Orbs — CSS animations for zero JS overhead */}
+        {}
         <div
           className="absolute top-1/2 left-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-cyan-300 rounded-full blur-[90px] lg:blur-[130px] opacity-[0.1]"
           style={enableAmbientMotion && isRevealed ? {
@@ -181,20 +181,20 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           } : undefined}
         />
 
-        {/* 4. Radial Vignette to blend gracefully with section edges */}
+        {}
         <div className="absolute inset-0 bg-[#030303] [mask-image:radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-75" />
 
-        {/* Soft bottom fade */}
+        {}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
       </Gsap.div>
 
-      {/* ── MAIN CONTENT (PERFECTLY CENTERED) ── */}
-      {/* Parallax wrapper (scroll-driven y only) */}
+      {}
+      {}
       <Gsap.div
         style={enableParallax ? { y: contentY } : undefined}
         className="relative z-10 w-full max-w-[1200px] px-5 sm:px-6 md:px-12 flex flex-col items-center text-center mt-8"
       >
-        {/* Iris reveal + entrance wrapper */}
+        {}
         <Gsap.div
           initial={false}
           animate={isRevealed
@@ -210,7 +210,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           className="w-full flex flex-col items-center"
         >
 
-        {/* Location & Time — visible at top */}
+        {}
         <Gsap.div
           initial={false}
           animate={isRevealed ? { opacity: 1 } : { opacity: 0 }}
@@ -220,9 +220,9 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           <LocationTimeBadge />
         </Gsap.div>
 
-        {/* 2. Massive Clear Typography */}
+        {}
         <div className="flex flex-col items-center justify-center relative w-full mb-4 md:mb-5">
-          {/* Left Decoration */}
+          {}
           <OrbitingDecoration icon={Code2} delay={0.15} className="left-0 sm:left-2 lg:left-16 top-2" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
           <OrbitingDecoration icon={Terminal} delay={0.45} className="left-6 sm:left-12 lg:left-28 bottom-8 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
 
@@ -244,12 +244,12 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             WONG
           </Gsap.h1>
 
-          {/* Right Decoration */}
+          {}
           <OrbitingDecoration icon={Database} delay={0.28} className="right-0 sm:right-2 lg:right-16 top-10" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
           <OrbitingDecoration icon={Cpu} delay={0.58} className="right-6 sm:right-12 lg:right-28 -bottom-2 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
         </div>
 
-        {/* 3. Clean Slogan with Green Accent */}
+        {}
         <Gsap.div
           initial={false}
           animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -264,7 +264,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           </p>
         </Gsap.div>
 
-        {/* 4. CTA Buttons */}
+        {}
         <Gsap.div
           initial={false}
           animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}

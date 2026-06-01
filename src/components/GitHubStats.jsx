@@ -8,13 +8,13 @@ const HEATMAP_DAYS = 364;
 const COLS = 52;
 const ROWS = 7;
 
-// Color palette matching the dark engineering theme
+
 const LEVEL_COLORS = {
-    0: '#111111',   // dark-gray for empty
-    1: '#1a2e05',   // darkest lime
+    0: '#111111',   
+    1: '#1a2e05',   
     2: '#3f6212',
     3: '#65a30d',
-    4: '#22d3ee',   // bright lime
+    4: '#22d3ee',   
 };
 
 const LOADING_COLOR = '#1a1a1a';
@@ -31,7 +31,7 @@ const HeatmapCanvas = memo(function HeatmapCanvas({ data, loading }) {
         const containerWidth = container.clientWidth;
         const dpr = window.devicePixelRatio || 1;
 
-        // Calculate cell size
+        
         const gap = window.innerWidth >= 768 ? 3 : 2;
         const cellSize = Math.floor((containerWidth - (COLS - 1) * gap) / COLS);
         const canvasWidth = COLS * cellSize + (COLS - 1) * gap;
@@ -159,7 +159,7 @@ const GitHubStats = memo(function GitHubStats() {
         <section id="github-stats-section" className="pt-20 md:pt-24 pb-24 md:pb-32 w-full relative bg-[#0A0A0A] overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 
-                {/* ── SECTION HEADER ── */}
+                {}
                 <Gsap.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ const GitHubStats = memo(function GitHubStats() {
                     <div className="flex-1 h-[1px] bg-white/10" />
                 </Gsap.div>
 
-                {/* Big Title Area */}
+                {}
                 <div className="mb-12 md:mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                     <Gsap.h2
                         initial={{ opacity: 0, y: 30 }}
@@ -202,10 +202,10 @@ const GitHubStats = memo(function GitHubStats() {
                     </Gsap.a>
                 </div>
 
-                {/* Grid Layout Layout for Raw Data */}
+                {}
                 <div className="flex flex-col xl:flex-row gap-6 md:gap-8 w-full">
 
-                    {/* Left side: Quick Numbers */}
+                    {}
                     <Gsap.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ const GitHubStats = memo(function GitHubStats() {
                         transition={{ duration: 0.8 }}
                         className="xl:w-1/3 grid grid-cols-2 gap-px bg-white/10 border border-white/10"
                     >
-                        {/* Box 1: Repositories */}
+                        {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
                             <div className="flex items-center justify-between text-white/40 group-hover:text-cyan-400 transition-colors">
                                 <Code size={20} />
@@ -226,7 +226,7 @@ const GitHubStats = memo(function GitHubStats() {
                             </div>
                         </div>
 
-                        {/* Box 2: Commits */}
+                        {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
                             <div className="flex items-center justify-between text-white/40 group-hover:text-cyan-400 transition-colors">
                                 <Terminal size={20} />
@@ -239,7 +239,7 @@ const GitHubStats = memo(function GitHubStats() {
                             </div>
                         </div>
 
-                        {/* Box 3: Followers */}
+                        {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
                             <div className="flex items-center justify-between text-white/40 group-hover:text-cyan-400 transition-colors">
                                 <Users size={20} />
@@ -252,7 +252,7 @@ const GitHubStats = memo(function GitHubStats() {
                             </div>
                         </div>
 
-                        {/* Box 4: Joined */}
+                        {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
                             <div className="flex items-center justify-between text-white/40 group-hover:text-cyan-400 transition-colors">
                                 <Calendar size={20} />
@@ -266,7 +266,7 @@ const GitHubStats = memo(function GitHubStats() {
                         </div>
                     </Gsap.div>
 
-                    {/* Right side: Matrix Output Container */}
+                    {}
                     <Gsap.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

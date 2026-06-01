@@ -90,12 +90,12 @@ const Navbar = memo(function Navbar() {
       }
 
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100); // Small delay to let close animation start and avoid layout calculation stutter
+    }, 100); 
   };
 
   return (
     <nav className={`fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50 pointer-events-none transition-all duration-500`}>
-      {/* ── Logo ── */}
+      {}
       <Magnetic>
         <div
           onClick={() => {
@@ -117,7 +117,7 @@ const Navbar = memo(function Navbar() {
         </div>
       </Magnetic>
 
-      {/* ── Mobile Menu Toggle ── */}
+      {}
       <div className="lg:hidden pointer-events-auto relative z-50">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -128,7 +128,7 @@ const Navbar = memo(function Navbar() {
         </button>
       </div>
 
-      {/* ── Mobile Menu Overlay ── */}
+      {}
       <GsapPresence>
         {isMenuOpen && (
           <Gsap.div
@@ -234,7 +234,7 @@ const Navbar = memo(function Navbar() {
             {/* Core Label */}
             <span className="relative z-10 pl-2">Let's Talk</span>
 
-            {/* Glowing Icon Container */}
+            {}
             <div className="relative z-10 w-7 h-7 bg-cyan-400 rounded-full flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300">
               <ArrowUpRight size={14} strokeWidth={2.5} className="group-hover:rotate-45 transition-transform duration-300" />
             </div>

@@ -1,20 +1,20 @@
 import { PROJECT_META } from '../data/projectMeta';
 import { SECTION_REGISTRY } from '../data/sectionRegistry';
 
-// ─── Scoring-Based Intent Matching ───────────────────────────────
-//
-// Instead of hardcoded keyword lists, the intent router reads from
-// SECTION_REGISTRY (single source of truth) and uses a scoring system:
-//
-//   1. Each synonym in the registry is tested against the user message
-//   2. Multi-word synonyms score higher than single-word ones (specificity bonus)
-//   3. The section with the highest score wins
-//   4. A minimum score threshold prevents false positives
-//
-// This approach is data-driven: adding a new section or synonym only
-// requires editing sectionRegistry.js - no code changes needed here.
 
-// ─── Score Thresholds ────────────────────────────────────────────
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const MIN_SCORE_THRESHOLD = 1;
 const HIGH_CONFIDENCE_SCORE = 2.5;
@@ -25,32 +25,32 @@ const NAVIGATION_TRIGGERS = [
   'mau ke', 'ingin ke', 'ke bagian', 'ke section',
 ];
 
-// ─── Off-Topic Detection ─────────────────────────────────────────
-// Patterns that indicate the user is asking something outside portfolio context.
-// Checked BEFORE sending to the LLM to save API calls.
+
+
+
 
 const OFF_TOPIC_PATTERNS = [
-  // Programming help requests
+  
   /\b(buatin?|buat(?:kan)?|write|code|tulis(?:kan)?)\s+(script|kode|code|program|function|fungsi|class|api)\b/i,
   /\b(debug|fix|solve|selesaikan|perbaiki)\s+(bug|error|code|kode)\b/i,
-  // Math / calculations
+  
   /\b(hitung|calculate|berapa\s+\d|what\s+is\s+\d|\d\s*[+\-*/]\s*\d)/i,
-  // General knowledge / trivia
+  
   /\b(siapa\s+presiden|who\s+is\s+the\s+president|capital\s+of|ibu\s*kota)\b/i,
   /\b(apa\s+itu|what\s+is)\s+(?!abday|wong|portofolio|portfolio|project|projek)/i,
-  // Weather, news, etc.
+  
   /\b(cuaca|weather|berita|news|gosip)\b/i,
-  // Translation / language tasks
+  
   /\b(translate|terjemahkan|artikan)\b/i,
-  // Creative writing unrelated to portfolio
+  
   /\b(cerita|story|puisi|poem|lagu|song|essay)\b/i,
-  // Explicit off-topic
+  
   /\b(game|movie|film|musik|music|resep|recipe|masak|cook)\b/i,
 ];
 
-// Whitelist - if matched, the message is always considered on-topic,
-// even if it also matches an off-topic pattern.
-// (e.g., "apa itu LeadsUp" should NOT be blocked)
+
+
+
 const ON_TOPIC_OVERRIDES = [
   /abday|wong/i,
   /portofolio|portfolio/i,
@@ -61,9 +61,9 @@ const ON_TOPIC_OVERRIDES = [
   ]),
 ];
 
-// ─── Project Matching ────────────────────────────────────────────
-// Build search-friendly aliases from PROJECT_META so users can refer
-// to projects by partial name, slug, or word fragments.
+
+
+
 
 const PROJECT_ALIASES = PROJECT_META.map(p => ({
   slug: p.slug,
@@ -82,17 +82,17 @@ const PROJECT_REFERENCE_TRIGGERS = [
   'show', 'lihat', 'buka', 'open', 'jelaskan', 'explain', 'ceritain',
 ];
 
-// ─── Utility Functions ───────────────────────────────────────────
+
 
 function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-/**
- * Normalize user input for consistent matching.
- * @param {string} text
- * @returns {string}
- */
+
+
+
+
+
 function normalize(text) {
   return text
     .toLowerCase()
@@ -135,37 +135,37 @@ function scoreProjectMention(normalizedMsg, project) {
   return score;
 }
 
-/**
- * Score how well a user message matches a section's synonyms.
- *
- * Scoring rules:
- * - Each matching synonym adds 1 base point
- * - Multi-word synonym matches get a specificity bonus (+0.5 per extra word)
- *   so "tech stack" (2 words) scores higher than "tech" (1 word)
- * - This ensures more specific matches win over ambiguous ones
- *
- * @param {string} normalizedMsg - Lowercased, trimmed user message
- * @param {string[]} synonyms - List of synonyms for a section
- * @returns {number} - Total relevance score
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 function scoreSynonyms(normalizedMsg, synonyms) {
   let score = 0;
   for (const synonym of synonyms) {
     if (normalizedMsg.includes(synonym)) {
       const wordCount = synonym.split(' ').length;
-      // Base score (1) + specificity bonus (0.5 per extra word)
+      
       score += 1 + (wordCount - 1) * 0.5;
     }
   }
   return score;
 }
 
-/**
- * Check if a message contains an explicit request to open a specific project.
- *
- * @param {string} normalizedMsg
- * @returns {{ slug: string } | null}
- */
+
+
+
+
+
+
 function matchProjectIntent(normalizedMsg) {
   const hasOpenTrigger = hasNavigationTrigger(normalizedMsg);
   const hasProjectContext = PROJECT_REFERENCE_TRIGGERS.some(t => normalizedMsg.includes(t));
@@ -195,13 +195,13 @@ function matchProjectIntent(normalizedMsg) {
   return null;
 }
 
-/**
- * Match user message to the best-matching section using scoring.
- * Reads from SECTION_REGISTRY - fully data-driven.
- *
- * @param {string} normalizedMsg
- * @returns {string | null} - The action ID of the best match, or null
- */
+
+
+
+
+
+
+
 function matchSectionIntent(normalizedMsg) {
   let bestAction = null;
   let bestScore = 0;
@@ -232,20 +232,20 @@ function matchSectionIntent(normalizedMsg) {
   return null;
 }
 
-// ─── Public API ──────────────────────────────────────────────────
 
-/**
- * Detect if a message is off-topic (outside portfolio context).
- * Returns a rejection message string if off-topic, or null if on-topic.
- *
- * @param {string} userMessage - Raw user input
- * @param {string} [lang='id'] - Detected language ('id' or 'en')
- * @returns {string | null}
- */
+
+
+
+
+
+
+
+
+
 export function detectOffTopic(userMessage, lang = 'id') {
   const msg = normalize(userMessage);
 
-  // On-topic overrides take priority
+  
   const isOverridden = ON_TOPIC_OVERRIDES.some(pattern => pattern.test(msg));
   if (isOverridden) return null;
 
@@ -257,13 +257,13 @@ export function detectOffTopic(userMessage, lang = 'id') {
     : "Wah, itu di luar konteks portofolio saya. Tanya aja soal project, skill, atau pengalaman saya!";
 }
 
-/**
- * Detect the language of the user's message.
- * Simple heuristic based on Indonesian marker words.
- *
- * @param {string} userMessage
- * @returns {'id' | 'en'}
- */
+
+
+
+
+
+
+
 export function detectLanguage(userMessage) {
   const indonesianMarkers = [
     'apa', 'siapa', 'dimana', 'bagaimana', 'gimana', 'kapan',
@@ -279,22 +279,22 @@ export function detectLanguage(userMessage) {
   return idCount >= 1 ? 'id' : 'en';
 }
 
-/**
- * Resolve the user's message to a navigation action.
- * Main entry point for intent-based routing.
- *
- * Priority order:
- *   1. Specific project open intent (e.g., "buka LeadsUp")
- *   2. Section navigation intent (scored from SECTION_REGISTRY)
- *   3. No action (general question - AI just answers)
- *
- * @param {string} userMessage - Raw user input
- * @returns {{ action: string | null, params: object | null }}
- */
+
+
+
+
+
+
+
+
+
+
+
+
 export function resolveAction(userMessage) {
   const msg = normalize(userMessage);
 
-  // 1. Check for specific project open intent
+  
   const projectMatch = matchProjectIntent(msg);
   if (projectMatch) {
     return {
@@ -303,12 +303,12 @@ export function resolveAction(userMessage) {
     };
   }
 
-  // 2. Check for section navigation (scored matching from registry)
+  
   const sectionAction = matchSectionIntent(msg);
   if (sectionAction) {
     return { action: sectionAction, params: null };
   }
 
-  // 3. No navigation - AI handles the response only
+  
   return { action: null, params: null };
 }

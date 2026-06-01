@@ -12,7 +12,7 @@ import { exponentialEaseOut } from "../utils/easing";
 
 const ReactMarkdown = lazy(() => import('react-markdown'));
 
-// ─── Terminal Commands ─────────────────────────────────────────────
+
 const COMMANDS = {
     help: {
         desc: "Show available commands",
@@ -86,7 +86,7 @@ const COMMANDS = {
     },
 };
 
-// ─── Cat command (requires slug parameter) ───────────────────────
+
 const handleCat = (args) => {
     if (!args) {
         return "Usage: cat <project-slug>\nUse 'ls' to see available slugs.";
@@ -120,12 +120,12 @@ const handleCat = (args) => {
     ].join('\n');
 };
 
-// ─── Project detail lookup (pure data, no require) ──────────────
+
 const getProjectDetail = (slug) => {
     return PROJECT_DETAILS_DATA[slug] || null;
 };
 
-// ─── Error display helpers ───────────────────────────────────────
+
 const ERROR_ICONS = {
     network: '🔌',
     rate_limit: '⏳',
@@ -134,17 +134,17 @@ const ERROR_ICONS = {
     unknown: '⚠️',
 };
 
-// ─── Typewriter animation ────────────────────────────────────────
-// Extracted as a reusable utility for cleaner code in the main handler.
 
-/**
- * Animate text appearing character by character.
- * @param {string} text - Full text to typewrite
- * @param {Function} setMessages - React state setter for messages
- * @param {Function} onTick - Callback after each character (e.g., scroll)
- * @param {number} [speed=10] - Milliseconds per character
- * @returns {Promise<void>}
- */
+
+
+
+
+
+
+
+
+
+
 function typewriteMessage(text, setMessages, onTick, speed = 10) {
     return new Promise((resolve) => {
         let i = 0;
@@ -167,7 +167,7 @@ function typewriteMessage(text, setMessages, onTick, speed = 10) {
     });
 }
 
-// ─── Main Component ──────────────────────────────────────────────
+
 const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -182,7 +182,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
     const [isStreaming, setIsStreaming] = useState(false);
     const [copiedIdx, setCopiedIdx] = useState(null);
 
-    // Command history
+    
     const [commandHistory, setCommandHistory] = useState([]);
     const historyIndexRef = useRef(-1);
     const savedInputRef = useRef("");
@@ -192,7 +192,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
     const inputRef = useRef(null);
     const scrollRafRef = useRef(null);
 
-    // ─── Scroll to bottom ────────────────────────────────────────
+    
     const forceScrollToBottom = useCallback(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -217,14 +217,14 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         };
     }, [messages, isTyping, isStreaming, forceScrollToBottom]);
 
-    // ─── Focus input when terminal opens ─────────────────────────
+    
     useEffect(() => {
         if (isOpen) {
             setTimeout(() => inputRef.current?.focus(), 100);
         }
     }, [isOpen]);
 
-    // ─── Keyboard shortcut: Ctrl+K to toggle ─────────────────────
+    
     useEffect(() => {
         const handler = (e) => {
             if (!onOpenChange && (e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -239,7 +239,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         return () => window.removeEventListener('keydown', handler);
     }, [isOpen, onOpenChange, setIsOpen]);
 
-    // ─── Copy to clipboard ───────────────────────────────────────
+    
     const handleCopy = useCallback((text, idx) => {
         navigator.clipboard.writeText(text).then(() => {
             setCopiedIdx(idx);
@@ -247,11 +247,11 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         });
     }, []);
 
-    // ─── Execute navigation action (silent - never shown in chat) ─
+    
     const executeAction = useCallback((action, params) => {
         if (!action) return;
 
-        // Open a specific project detail modal
+        
         if (action === "open_project" && params?.project_name) {
             const project = PROJECT_META.find(p =>
                 p.title.toLowerCase().includes(params.project_name.toLowerCase()) ||
@@ -263,7 +263,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
             return;
         }
 
-        // Scroll to top (hero)
+        
         if (action === "scroll_to_hero") {
             if (window.lenisInstance) {
                 window.lenisInstance.scrollTo(0, {
@@ -276,11 +276,11 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
             return;
         }
 
-        // Scroll to a named section (driven by sectionRegistry.js)
+        
         const targetId = ACTION_TO_ELEMENT[action];
         if (!targetId) return;
 
-        // Retry mechanism for lazy-loaded sections
+        
         const scrollToElement = (retries = 3) => {
             const element = document.getElementById(targetId);
             if (element) {
@@ -301,7 +301,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         setTimeout(() => scrollToElement(), 300);
     }, [navigate, location]);
 
-    // ─── Handle terminal commands (local, no API call) ───────────
+    
     const handleLocalCommand = (input) => {
         const trimmed = input.trim();
         const lower = trimmed.toLowerCase();
@@ -351,26 +351,26 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         return false;
     };
 
-    // ─── Send message (main handler) ─────────────────────────────
-    // Flow: Pre-filter -> Resolve action -> LLM call -> Typewrite -> Execute action
+    
+    
     const handleSendMessage = useCallback(async (e, directMsg) => {
         if (e) e.preventDefault();
         const userMsg = (directMsg || inputValue).trim();
         if (!userMsg) return;
 
-        // Save to command history
+        
         setCommandHistory(prev => [...prev, userMsg]);
         historyIndexRef.current = -1;
         savedInputRef.current = "";
         setInputValue("");
 
-        // Step 0: Check for local terminal commands
+        
         if (handleLocalCommand(userMsg)) return;
 
-        // Add user message to chat
+        
         setMessages(prev => [...prev, { type: 'user', text: userMsg }]);
 
-        // Step 1: Pre-filter off-topic messages (no API call needed)
+        
         const lang = detectLanguage(userMsg);
         const offTopicMessage = detectOffTopic(userMsg, lang);
         if (offTopicMessage) {
@@ -378,14 +378,14 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
             return;
         }
 
-        // Step 2: Resolve navigation action from user intent (deterministic, no LLM)
+        
         const { action, params } = resolveAction(userMsg);
 
-        // Step 3: Call LLM for a natural language response
+        
         setIsTyping(true);
 
         try {
-            // Build conversation context - limit to last 6 non-terminal messages
+            
             const apiMessages = messages
                 .filter(m => m.text && !m.isTerminal)
                 .slice(-6)
@@ -395,13 +395,13 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                 }));
             apiMessages.push({ role: 'user', content: userMsg });
 
-            // Stream and collect the full response
+            
             let fullText = "";
             for await (const chunk of streamCerebras(apiMessages)) {
                 fullText += chunk;
             }
 
-            // Step 4: Typewrite the response (clean text, no action metadata)
+            
             setIsTyping(false);
             setIsStreaming(true);
             setMessages(prev => [...prev, { type: 'bot', text: "" }]);
@@ -415,7 +415,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
 
             setIsStreaming(false);
 
-            // Step 5: Execute navigation action silently after response is displayed
+            
             if (action) {
                 executeAction(action, params);
             }
@@ -433,10 +433,10 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                 isError: true
             }]);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        
     }, [inputValue, messages, executeAction, forceScrollToBottom]);
 
-    // ─── Keyboard: Arrow Up/Down for command history ─────────────
+    
     const handleKeyDown = (e) => {
         if (e.key === 'ArrowUp') {
             e.preventDefault();
@@ -460,20 +460,20 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
         }
     };
 
-    // ─── Quick action buttons ────────────────────────────────────
+    
     const quickAction = (text) => {
         handleSendMessage(null, text);
     };
 
-    // ─── RENDER ──────────────────────────────────────────────────
+    
     return (
         <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] flex flex-col items-end pointer-events-auto font-mono text-sm">
 
-            {/* Chat Window */}
+            {}
             {isOpen && (
                 <div className="mb-3 md:mb-4 w-[min(95vw,480px)] bg-[#0c0c0c] border border-neutral-800 shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300 rounded-md">
 
-                    {/* Terminal Header */}
+                    {}
                     <div className="bg-[#1a1a1a] px-3 py-2 flex justify-between items-center border-b border-neutral-800 select-none">
                         <div className="flex items-center gap-2">
                             <div className="flex gap-1.5">
@@ -495,7 +495,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                         </div>
                     </div>
 
-                    {/* Messages Area */}
+                    {}
                     <div
                         ref={chatContainerRef}
                         role="log"
@@ -504,7 +504,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                         className="h-[52vh] md:h-[380px] overflow-y-auto p-3.5 md:p-4 flex flex-col gap-3 font-mono text-[13px] leading-relaxed relative scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent overscroll-contain"
                         onWheel={(e) => e.stopPropagation()}
                     >
-                        {/* Initial login line */}
+                        {}
                         <div className="mb-2 text-neutral-500">
                             Last login: {new Date().toDateString()} on ttys001
                         </div>
@@ -536,7 +536,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                                                 </div>
                                             )}
                                         </div>
-                                        {/* Copy button */}
+                                        {}
                                         {msg.text && !msg.isError && (
                                             <button
                                                 onClick={() => handleCopy(msg.text, idx)}
@@ -560,7 +560,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                         <div ref={messagesEndRef} />
                     </div>
 
-                    {/* Quick Options */}
+                    {}
                     <div className="px-3 py-2 border-t border-neutral-800 bg-[#0c0c0c] flex gap-2 overflow-x-auto no-scrollbar">
                         <button onClick={() => quickAction("Tell me about your tech stack")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-cyan-400 hover:text-cyan-400 transition-colors whitespace-nowrap" aria-label="Ask about tech stack">./stack</button>
                         <button onClick={() => quickAction("Show me your projects")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-cyan-400 hover:text-cyan-400 transition-colors whitespace-nowrap" aria-label="Ask about projects">./projects</button>
@@ -568,7 +568,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                         <button onClick={() => quickAction("How can I contact you?")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-cyan-400 hover:text-cyan-400 transition-colors whitespace-nowrap" aria-label="Ask about contact">./contact</button>
                     </div>
 
-                    {/* Input Area */}
+                    {}
                     <form onSubmit={handleSendMessage} className="border-t border-neutral-800 bg-[#0c0c0c] p-2 flex gap-2 items-center">
                         <span className="text-cyan-400 pl-2 select-none">{'>'}</span>
                         <input
@@ -588,7 +588,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                 </div>
             )}
 
-            {/* Toggle Button */}
+            {}
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="group flex items-center justify-center w-11 h-11 md:w-14 md:h-14 bg-black border border-neutral-800 text-cyan-400 shadow-lg hover:bg-neutral-900 transition-all rounded-full"

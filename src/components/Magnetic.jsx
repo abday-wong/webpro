@@ -1,7 +1,7 @@
 import { useRef, memo } from 'react';
 import { Gsap, useGsapMotionValue } from '../utils/gsapAnimate';
 
-// Feature detection: only enable magnetic effect on devices with a fine pointer (mouse/trackpad)
+
 const HAS_FINE_POINTER =
     typeof window !== 'undefined' &&
     window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -11,7 +11,7 @@ const Magnetic = memo(function Magnetic({ children }) {
     const x = useGsapMotionValue(0);
     const y = useGsapMotionValue(0);
 
-    // On mobile/touch: render children without the motion wrapper for zero overhead
+    
     if (!HAS_FINE_POINTER) {
         return children;
     }

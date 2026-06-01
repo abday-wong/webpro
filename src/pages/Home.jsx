@@ -24,12 +24,12 @@ export default function Home() {
   const location = useLocation();
   const galleryRef = useRef(null);
 
-  /* Refactored Loading & Scroll Logic */
+  
   const [isLoading, setIsLoading] = useState(true);
   const [isScrollLocked, setIsScrollLocked] = useState(true);
   const [enableNoiseOverlay, setEnableNoiseOverlay] = useState(false);
 
-  // Initialize Lenis with scroll lock state
+  
   useLenis(isScrollLocked);
 
   useScrollToGallery(galleryRef, isLoading);
@@ -42,17 +42,17 @@ export default function Home() {
     }
   }, []);
 
-  // Preload profile image (optimized WebP with JPEG fallback)
+  
   useEffect(() => {
     const profileImg = new Image();
     profileImg.src = "/profile.webp";
   }, []);
 
-  // Manage body overflow based on scroll lock
+  
   useEffect(() => {
     if (isScrollLocked) {
       document.body.style.overflow = 'hidden';
-      // Safety check: ensure strict scroll reset
+      
       window.scrollTo(0, 0);
     } else {
       document.body.style.overflow = '';

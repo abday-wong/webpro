@@ -38,7 +38,7 @@ const useLenis = (disabled) => {
             const gsap = gsapModule.default || gsapModule.gsap;
             gsap.registerPlugin(ScrollTrigger);
 
-            // Reuse existing global instance if still alive
+            
             if (window.lenisInstance && !window.lenisInstance.isDestroyed) {
                 lenisRef.current = window.lenisInstance;
                 if (disabled) lenisRef.current.stop();
@@ -48,14 +48,14 @@ const useLenis = (disabled) => {
 
             window.lenisInstance = null;
 
-            // Lenis with optimized config for stable desktop + touch scrolling
+            
             const lenis = new Lenis({
                 duration: 1.5,
                 easing: exponentialEaseOut,
                 direction: 'vertical',
                 gestureDirection: 'vertical',
                 smooth: true,
-                smoothTouch: false, // Let mobile devices use native hardware-accelerated momentum scrolling
+                smoothTouch: false, 
                 touchMultiplier: 2,
                 infinite: false,
             });
@@ -68,20 +68,20 @@ const useLenis = (disabled) => {
             if (disabledRef.current) lenis.stop();
             else lenis.start();
 
-            // Sync Lenis scroll events with GSAP ScrollTrigger
+            
             lenis.on('scroll', ScrollTrigger.update);
 
-            // Use GSAP ticker instead of a separate rAF loop.
-            // This avoids double requestAnimationFrame and synchronizes
-            // all animations (Lenis + GSAP) in a single frame callback.
+            
+            
+            
             const tickerCallback = (time) => {
-                // GSAP ticker provides time in seconds, Lenis expects milliseconds
+                
                 lenis.raf(time * 1000);
             };
             tickerCallbackRef.current = tickerCallback;
             gsap.ticker.add(tickerCallback);
 
-            // Tell Lenis not to run its own rAF loop
+            
             gsap.ticker.lagSmoothing(0);
 
             ScrollTrigger.refresh();

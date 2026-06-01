@@ -1,12 +1,12 @@
 import { Gsap } from "../../utils/gsapAnimate";
 import { ArrowUpRight, Github, Globe } from "lucide-react";
 
-// Helper: inject Cloudinary automatic format & quality + width
+
 function cloudinarySrc(originalUrl, width) {
   try {
     if (!originalUrl || typeof originalUrl !== 'string') return originalUrl;
     if (!originalUrl.includes('/upload/')) return originalUrl;
-    // Avoid double-injecting transforms
+    
     if (originalUrl.includes('f_auto') || originalUrl.includes('q_auto')) return originalUrl;
     return originalUrl.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
   } catch {
@@ -30,7 +30,7 @@ export default function ProjectCaseLayout({
   return (
     <div className={`bg-[#030303] text-white font-sans selection:bg-cyan-400 selection:text-white overflow-x-hidden ${mode === 'page' ? 'min-h-screen' : 'h-full flex flex-col'}`}>
 
-      {/* ── Sticky header ─────────────────────── */}
+      {}
       <div className="sticky top-0 z-40 bg-[#030303]/90 backdrop-blur-md border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -52,7 +52,7 @@ export default function ProjectCaseLayout({
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {/* ── Hero Section ──────────────────────── */}
+        {}
         <section className="max-w-4xl mx-auto text-center flex flex-col items-center px-6 md:px-10 pt-16 md:pt-20 pb-12">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-white/40 mb-4">
             Project Case Study
@@ -101,7 +101,7 @@ export default function ProjectCaseLayout({
           </Gsap.div>
         </section>
 
-        {/* ── Main Cover Image ──────────────────────── */}
+        {}
         {project.heroImg && (
           <section className="px-6 md:px-10 pb-16">
             <Gsap.div
@@ -131,13 +131,13 @@ export default function ProjectCaseLayout({
 
         <section className="max-w-5xl mx-auto px-6 md:px-10 pb-24">
 
-          {/* Custom Section Block */}
+          {}
           {preFeatureSection}
 
-          {/* Main Grid: Features and Impact side-by-side on desktop */}
+          {}
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 mt-16 border-t border-white/15 pt-16">
 
-            {/* ── Left Column: Features ──── */}
+            {}
             <div className="space-y-16">
               {project.features && project.features.length > 0 && (
                 <div>
@@ -156,7 +156,7 @@ export default function ProjectCaseLayout({
               )}
             </div>
 
-            {/* ── Right Column: Impact ──── */}
+            {}
             <div className="space-y-16">
               {project.impact && project.impact.length > 0 && (
                 <div>
@@ -176,7 +176,7 @@ export default function ProjectCaseLayout({
             </div>
           </div>
 
-          {/* Tech Stack below both */}
+          {}
           <div className="mt-12 lg:mt-16 border-t border-white/15 pt-12 lg:pt-16">
             {project.stack && project.stack.length > 0 && (
               <div>

@@ -3,9 +3,9 @@ import { Gsap } from '../utils/gsapAnimate';
 import { Trophy, ArrowUpRight, MapPin } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
-/* ─────────────────────────────────────────
-   Static data
-   ───────────────────────────────────────── */
+
+
+
 const achievements = [
   {
     icon: Trophy,
@@ -33,9 +33,9 @@ const CAPABILITIES = [
   'Local Persistence',
 ];
 
-/* ─────────────────────────────────────────
-   Achievement Card
-   ───────────────────────────────────────── */
+
+
+
 const AchievementCard = ({ achievement, index }) => {
   const Icon = achievement.icon;
   const handleClick = () => {
@@ -59,28 +59,28 @@ const AchievementCard = ({ achievement, index }) => {
       <div className="absolute inset-0 border border-white/5 rounded-[8px] pointer-events-none" />
 
       <div className="relative z-10 p-6 md:p-7">
-        {/* Top meta row */}
+        {}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            {/* Category tag */}
+            {}
             <span className="font-mono text-[8.5px] uppercase tracking-[0.18em] text-white/45 border border-white/10 px-2.5 py-1 rounded-[2px] bg-neutral-800/90 shadow-[0_1px_4px_rgba(255,255,255,0.01)]">
               {achievement.category}
             </span>
-            {/* Rank badge */}
+            {}
             {achievement.rank && (
               <span className="font-mono text-[8.5px] font-bold uppercase tracking-[0.18em] bg-neutral-900 text-white px-2.5 py-1 rounded-[2px]">
                 {achievement.rank}
               </span>
             )}
           </div>
-          {/* Year */}
+          {}
           <span className="font-mono text-[11px] font-bold text-white/30 tabular-nums">{achievement.year}</span>
         </div>
 
-        {/* Main content */}
+        {}
         <div className="flex items-start justify-between gap-5">
           <div className="flex-1">
-            {/* Index + title */}
+            {}
             <div className="flex items-baseline gap-3 mb-3">
               <span className="font-mono text-[10px] text-white/22 font-bold tabular-nums select-none border border-white/10 px-1.5 py-0.5 rounded-[2px] leading-none">
                 {String(index + 1).padStart(2, '0')}
@@ -90,12 +90,12 @@ const AchievementCard = ({ achievement, index }) => {
               </h3>
             </div>
 
-            {/* Event name */}
+            {}
             <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-white/40 ml-8 mb-4">
               {achievement.event}
             </p>
 
-            {/* Description */}
+            {}
             {achievement.description && (
               <p className="text-[13px] text-white/58 font-light leading-[1.72] ml-8 max-w-[470px]">
                 {achievement.description}
@@ -103,13 +103,13 @@ const AchievementCard = ({ achievement, index }) => {
             )}
           </div>
 
-          {/* Icon circle */}
+          {}
           <div className="shrink-0 w-11 h-11 rounded-full border border-white/10 bg-neutral-800/95 shadow-[0_2px_8px_rgba(255,255,255,0.02)] flex items-center justify-center group-hover:border-white/20/20 transition-all duration-300">
             <Icon size={16} className="text-white/35 group-hover:text-white/55 transition-colors duration-300" />
           </div>
         </div>
 
-        {/* Footer CTA */}
+        {}
         <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
             Click to view repository
@@ -124,14 +124,14 @@ const AchievementCard = ({ achievement, index }) => {
   );
 };
 
-/* ─────────────────────────────────────────
-   Main Component
-   ───────────────────────────────────────── */
+
+
+
 const AboutSection = memo(function AboutSection() {
   return (
     <section id="about-section" className="py-20 md:py-28 w-full relative bg-[#030303] overflow-hidden">
 
-      {/* Ambient background glows */}
+      {}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute right-0 top-1/4 w-[520px] h-[520px] bg-cyan-300/[0.07] rounded-full blur-[110px]" />
         <div className="absolute -left-24 bottom-0 w-[380px] h-[380px] bg-neutral-900/[0.03] rounded-full blur-[100px]" />
@@ -139,7 +139,7 @@ const AboutSection = memo(function AboutSection() {
 
       <div className="max-w-[1380px] mx-auto px-6 md:px-12 relative z-10">
 
-        {/* ── Section Label ── */}
+        {}
         <Gsap.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -156,9 +156,9 @@ const AboutSection = memo(function AboutSection() {
 
         <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] gap-14 lg:gap-20 xl:gap-28 items-start">
 
-          {/* ══════════════════════════════
-              LEFT COLUMN — Image & Meta
-              ══════════════════════════════ */}
+          {
+
+}
           <Gsap.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,12 +166,12 @@ const AboutSection = memo(function AboutSection() {
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:sticky lg:top-28"
           >
-            {/* Profile image with decorative offset border */}
+            {}
             <div className="relative">
               <div className="absolute -top-2.5 -left-2.5 w-full h-full border border-cyan-400/25 rounded-[4px] pointer-events-none" />
 
               <div className="relative aspect-[4/5] w-full rounded-[4px] overflow-hidden border border-white/10 bg-neutral-900/[0.04] group">
-                {/* Hover desaturation overlay */}
+                {}
                 <div className="absolute inset-0 bg-neutral-900/[0.12] group-hover:bg-transparent transition-colors duration-700 z-10 mix-blend-multiply pointer-events-none" />
 
                 <picture>
@@ -185,13 +185,13 @@ const AboutSection = memo(function AboutSection() {
                   />
                 </picture>
 
-                {/* Name plate at bottom */}
+                {}
                 <div className="absolute bottom-0 left-0 right-0 px-5 pt-10 pb-4 bg-gradient-to-t from-black/65 via-black/30 to-transparent z-20">
                   <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/50 mb-0.5">Name</p>
                   <p className="text-white font-bold text-[15px] tracking-wide leading-snug">{PORTFOLIO_DATA.profile.name}</p>
                 </div>
 
-                {/* Corner brackets */}
+                {}
                 <span className="absolute top-3.5 left-3.5 w-5 h-px bg-neutral-900/65 z-20" />
                 <span className="absolute top-3.5 left-3.5 w-px h-5 bg-neutral-900/65 z-20" />
                 <span className="absolute bottom-3.5 right-3.5 w-5 h-px bg-neutral-900/65 z-20" />
@@ -199,7 +199,7 @@ const AboutSection = memo(function AboutSection() {
               </div>
             </div>
 
-            {/* Status + Location */}
+            {}
             <div className="mt-4 grid grid-cols-2 gap-2.5">
               <div className="bg-neutral-900 border border-white/10 rounded-[3px] py-3.5 px-4">
                 <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/40 mb-1.5">Status</p>
@@ -217,7 +217,7 @@ const AboutSection = memo(function AboutSection() {
               </div>
             </div>
 
-            {/* Quick Stats */}
+            {}
             <div className="mt-2.5 grid grid-cols-3 gap-2.5">
               {STATS.map((stat, i) => (
                 <div key={i} className="bg-neutral-900 border border-white/10 rounded-[3px] py-4 px-3 text-center">
@@ -228,12 +228,12 @@ const AboutSection = memo(function AboutSection() {
             </div>
           </Gsap.div>
 
-          {/* ══════════════════════════════
-              RIGHT COLUMN — Content
-              ══════════════════════════════ */}
+          {
+
+}
           <div className="flex flex-col">
 
-            {/* Headline */}
+            {}
             <Gsap.div
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -241,12 +241,12 @@ const AboutSection = memo(function AboutSection() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="mb-8 md:mb-10"
             >
-              {/* Eyebrow */}
+              {}
               <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-white/30 mb-5">
                 Based in {PORTFOLIO_DATA.profile.location} — Open to Work
               </p>
 
-              {/* Main title */}
+              {}
               <h2 className="font-display font-bold tracking-[-0.025em] leading-[1.08] text-white">
                 <span className="block text-[44px] sm:text-[56px] lg:text-[64px] xl:text-[72px]">
                   Flutter Developer
@@ -258,7 +258,7 @@ const AboutSection = memo(function AboutSection() {
               </h2>
             </Gsap.div>
 
-            {/* Role subtitle */}
+            {}
             <Gsap.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ const AboutSection = memo(function AboutSection() {
               </span>
             </Gsap.div>
 
-            {/* Bio */}
+            {}
             <Gsap.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -284,10 +284,10 @@ const AboutSection = memo(function AboutSection() {
               </p>
             </Gsap.div>
 
-            {/* Divider */}
+            {}
             <div className="mt-10 md:mt-12 mb-10 md:mb-12 h-px bg-neutral-900/[0.07] max-w-[580px]" />
 
-            {/* Core Capabilities */}
+            {}
             <Gsap.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -309,7 +309,7 @@ const AboutSection = memo(function AboutSection() {
               </div>
             </Gsap.div>
 
-            {/* Achievements */}
+            {}
             {achievements.length > 0 && (
               <Gsap.div
                 initial={{ opacity: 0, y: 14 }}

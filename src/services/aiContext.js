@@ -3,29 +3,29 @@ import { getSectionLabels } from '../data/sectionRegistry';
 import { PROJECT_DETAILS_DATA } from '../data/projectDetailsData';
 import { PROJECT_META } from '../data/projectMeta';
 
-// ─── Project Knowledge Base ──────────────────────────────────────
-// Uses pure data objects (no JSX) to avoid pulling React components
-// into the ChatWidget bundle and defeating lazy-loading.
+
+
+
 
 const PROJECT_DETAILS = PROJECT_DETAILS_DATA;
 
-// ─── Data Serializers ────────────────────────────────────────────
-// Pure functions that transform portfolio data into prompt-friendly strings.
 
-/**
- * Serialize experience entries into a readable list.
- * @returns {string}
- */
+
+
+
+
+
+
 function serializeExperience() {
   return PORTFOLIO_DATA.experience
     .map(exp => `- ${exp.title} (${exp.period}): ${exp.description.join(' ')}`)
     .join('\n');
 }
 
-/**
- * Serialize tech stack grouped by category for better readability.
- * @returns {string}
- */
+
+
+
+
 function serializeTechStack() {
   const grouped = {};
   for (const tech of PORTFOLIO_DATA.techStack) {
@@ -37,10 +37,10 @@ function serializeTechStack() {
     .join('\n');
 }
 
-/**
- * Serialize project details into structured text blocks.
- * @returns {string}
- */
+
+
+
+
 function serializeProjects() {
   return Object.entries(PROJECT_DETAILS)
     .map(([slug, p]) => [
@@ -57,10 +57,10 @@ function serializeProjects() {
     .join('\n---\n');
 }
 
-/**
- * Serialize achievements (hackathons, competitions, etc.)
- * @returns {string}
- */
+
+
+
+
 function serializeAchievements() {
   if (!PORTFOLIO_DATA.achievements?.length) return 'No achievements listed.';
   return PORTFOLIO_DATA.achievements
@@ -78,10 +78,10 @@ function serializeAchievements() {
     .join('\n');
 }
 
-/**
- * Serialize technical capabilities.
- * @returns {string}
- */
+
+
+
+
 function serializeCapabilities() {
   if (!PORTFOLIO_DATA.capabilities?.length) return 'No capabilities listed.';
   return PORTFOLIO_DATA.capabilities.map(c => `- ${c}`).join('\n');
@@ -155,19 +155,19 @@ export function buildScopedContext(userMessage) {
   ].join('\n');
 }
 
-// ─── System Prompt Generator ─────────────────────────────────────
 
-/**
- * Generate the system prompt for the AI assistant.
- *
- * Design decisions:
- * - NO action/navigation instructions - actions are handled by intentRouter.js
- * - NO JSON output format requirements - AI outputs pure natural language
- * - Focus on answer quality, conciseness, and portfolio domain boundary
- * - All portfolio data is included as context (context-stuffing approach)
- *
- * @returns {string} The complete system prompt
- */
+
+
+
+
+
+
+
+
+
+
+
+
 export function generateSystemPrompt() {
   const { profile } = PORTFOLIO_DATA;
 

@@ -66,7 +66,7 @@ const useScrollToGallery = (galleryRef, isLoading) => {
             });
           });
         } else {
-          // Fallback
+          
           gsap.set(track, { x: 0 });
           ScrollTrigger.refresh();
 

@@ -9,7 +9,7 @@ const API_KEY = (
 const CEREBRAS_CHAT_COMPLETIONS_URL = 'https://api.cerebras.ai/v1/chat/completions';
 
 
-// Error classification for granular UI feedback
+
 const classifyError = (error) => {
     const msg = error?.message?.toLowerCase() || '';
     const status = error?.status || error?.statusCode || 0;
@@ -58,7 +58,7 @@ async function* parseOpenAICompatibleStream(response) {
                     const content = parsed.choices?.[0]?.delta?.content;
                     if (content) yield content;
                 } catch (error) {
-                    // Ignore partial/non-JSON SSE control frames.
+                    
                 }
             }
         }
@@ -73,18 +73,18 @@ async function* parseOpenAICompatibleStream(response) {
                 const content = parsed.choices?.[0]?.delta?.content;
                 if (content) yield content;
             } catch (error) {
-                // Ignore trailing parser errors.
+                
             }
         }
     }
 }
 
-/**
- * Stream chat completions from Cerebras.
- * Yields text chunks as they arrive.
- * @param {Array} messages - Chat messages (already limited by caller)
- * @returns {AsyncGenerator<string>} - Yields text content chunks
- */
+
+
+
+
+
+
 export async function* streamCerebras(messages) {
     if (!API_KEY) {
         const error = new Error('Missing API key');

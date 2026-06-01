@@ -15,7 +15,7 @@ const MarqueeBanner = memo(function MarqueeBanner() {
     <div className="relative z-20 sm:-rotate-[0.8deg] sm:scale-[1.02] cursor-default select-none">
       <div className="bg-black shadow-[0_0_40px_rgba(34,211,238,0.08)]">
 
-        {/* ── Row 1: Solid Lime Text, scrolling left ── */}
+        {}
         <div className="py-4 md:py-6 overflow-hidden relative group border-b border-neutral-800/60">
           <div
             className="flex whitespace-nowrap gap-6 md:gap-14 will-change-transform group-hover:[animation-play-state:paused]"
@@ -37,12 +37,12 @@ const MarqueeBanner = memo(function MarqueeBanner() {
             ))}
           </div>
 
-          {/* Edge Fades */}
+          {}
           <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
         </div>
 
-        {/* ── Row 2: Green background, scrolling right ── */}
+        {}
         <div className="py-2.5 md:py-4 bg-cyan-400 overflow-hidden relative group">
           <div
             className="flex whitespace-nowrap gap-6 md:gap-12 will-change-transform group-hover:[animation-play-state:paused]"
@@ -60,7 +60,7 @@ const MarqueeBanner = memo(function MarqueeBanner() {
             ))}
           </div>
 
-          {/* Edge Fades */}
+          {}
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-cyan-400 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-cyan-400 to-transparent z-10 pointer-events-none" />
         </div>

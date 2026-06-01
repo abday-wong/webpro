@@ -23,7 +23,7 @@ const Footer = memo(function Footer() {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  // Direct DOM update for the clock — avoids React re-render every second
+  
   useEffect(() => {
     const updateTime = () => {
       if (!timeRef.current) return;
@@ -43,14 +43,14 @@ const Footer = memo(function Footer() {
 
   return (
     <footer id="contact-section" className="bg-[#0A0A0A] text-white pt-20 md:pt-24 pb-12 w-full relative overflow-hidden">
-      {/* Subtle Matrix BG */}
+      {}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}
       />
 
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-12 relative z-10 flex flex-col justify-between min-h-[50vh]">
 
-        {/* ── SECTION HEADER ── */}
+        {}
         <Gsap.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,10 +64,10 @@ const Footer = memo(function Footer() {
           <div className="flex-1 h-[1px] bg-white/10" />
         </Gsap.div>
 
-        {/* Main Grid Layout */}
+        {}
         <div className="flex flex-col lg:flex-row justify-between gap-12 md:gap-16 lg:gap-8 mb-20 md:mb-24">
 
-          {/* Left: Huge Name & Status */}
+          {}
           <div className="lg:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.95] sm:leading-[0.9] text-white mb-6">

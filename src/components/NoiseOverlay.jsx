@@ -1,18 +1,18 @@
 import { memo, useState, useEffect } from 'react';
 
-/**
- * NoiseOverlay renders a grain/noise texture over the entire viewport.
- * 
- * Performance: Uses a static base64-encoded noise PNG tile instead of a live
- * SVG feTurbulence filter. The PNG is cached by the browser and composited
- * as a simple texture blit — no per-frame GPU filter computation.
- * 
- * Disabled on mobile devices because the grain effect is barely visible
- * on small screens and still costs a compositing layer.
- */
 
-// Generate a static noise PNG once at module load via Canvas.
-// This replaces the feTurbulence SVG which the browser re-computed per-frame.
+
+
+
+
+
+
+
+
+
+
+
+
 const generateNoiseDataURI = () => {
     if (typeof document === 'undefined') return '';
     const size = 150;
@@ -54,7 +54,7 @@ export default memo(function NoiseOverlay() {
         };
     }, []);
 
-    // Skip rendering on mobile to save GPU resources
+    
     if (isMobile) return null;
 
     return (

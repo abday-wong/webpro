@@ -11,7 +11,7 @@ const Cursor = memo(function Cursor() {
     const [hovered, setHovered] = useState(false);
 
     useEffect(() => {
-        // Skip on devices without a fine pointer (touch-only)
+        
         if (!hasPointerDevice()) return;
 
         let rafId = null;
@@ -22,7 +22,7 @@ const Cursor = memo(function Cursor() {
             if (rafId === null) {
                 rafId = requestAnimationFrame(() => {
                     if (cursorRef.current) {
-                        const offset = 8; // fixed 16px / 2
+                        const offset = 8; 
                         cursorRef.current.style.transform = `translate3d(${positionRef.current.x - offset}px, ${positionRef.current.y - offset}px, 0)`;
                     }
                     rafId = null;
@@ -30,7 +30,7 @@ const Cursor = memo(function Cursor() {
             }
         };
 
-        // Gunakan event delegation untuk performa lebih baik
+        
         const updateHovered = (nextHovered) => {
             if (hoveredRef.current === nextHovered) return;
             hoveredRef.current = nextHovered;
@@ -61,7 +61,7 @@ const Cursor = memo(function Cursor() {
         };
     }, []);
 
-    // Skip render on touch-only devices
+    
     if (!hasPointerDevice()) return null;
 
     return (

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Gsap, GsapPresence } from '../utils/gsapAnimate';
-// Note: scroll-triggered entrance animations removed from this section intentionally
+
 import { Plus, Calendar, Building2, Sparkles, ArrowUpRight } from 'lucide-react';
 
 const experiences = [
