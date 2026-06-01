@@ -39,8 +39,8 @@ export default function ProjectGallery({ onOpenProject }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    
-    
+
+
     const reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const updateMode = () => {
@@ -53,7 +53,7 @@ export default function ProjectGallery({ onOpenProject }) {
     if (reducedMotionMedia.addEventListener) reducedMotionMedia.addEventListener('change', updateMode);
     else reducedMotionMedia.addListener(updateMode);
 
-    
+
     let resizeTimer;
     const handleResize = () => {
       clearTimeout(resizeTimer);
@@ -69,7 +69,7 @@ export default function ProjectGallery({ onOpenProject }) {
     };
   }, []);
 
-  
+
   useEffect(() => {
     const firstImage = new Image();
     firstImage.src = cloudinarySrc(PROJECT_META[0]?.img, 800);
@@ -99,7 +99,7 @@ export default function ProjectGallery({ onOpenProject }) {
     const t1 = setTimeout(calc, 250);
     const t2 = setTimeout(calc, 900);
 
-    
+
     let resizeTimeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
@@ -111,14 +111,14 @@ export default function ProjectGallery({ onOpenProject }) {
 
     window.addEventListener("resize", handleResize, { passive: true });
 
-    
+
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', handleResize);
     }
 
     let ro;
     if (typeof ResizeObserver !== "undefined" && trackRef.current) {
-      
+
       let roTimeout;
       ro = new ResizeObserver(() => {
         clearTimeout(roTimeout);
@@ -269,16 +269,16 @@ export default function ProjectGallery({ onOpenProject }) {
     };
   }, [enablePinnedScroll, maxScroll, projectCount]);
 
-  
 
 
 
 
-  
+
+
   if (!enablePinnedScroll) {
     return (
       <section ref={sectionRef} className="relative bg-neutral-900 overflow-hidden py-16 pb-20">
-        {}
+        { }
         <div className="px-6 mb-10">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
@@ -297,7 +297,7 @@ export default function ProjectGallery({ onOpenProject }) {
           </p>
         </div>
 
-        {}
+        { }
         <div className="px-6 mb-6 flex items-center justify-between">
           <span className="font-mono text-xs text-white/30 uppercase tracking-[0.16em]">
             {String(activeProjectIndex + 1).padStart(2, '0')} / {String(projectCount).padStart(2, '0')}
@@ -312,7 +312,7 @@ export default function ProjectGallery({ onOpenProject }) {
           </div>
         </div>
 
-        {}
+        { }
         <div
           ref={mobileScrollRef}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 scrollbar-hide [-webkit-overflow-scrolling:touch] [touch-action:pan-x] pb-4"
@@ -329,7 +329,7 @@ export default function ProjectGallery({ onOpenProject }) {
               data-project-index={index}
               style={{ WebkitTapHighlightColor: 'transparent', aspectRatio: '3/4' }}
             >
-              {}
+              { }
               <div className="absolute inset-0 overflow-hidden">
                 <picture>
                   <source
@@ -351,17 +351,17 @@ export default function ProjectGallery({ onOpenProject }) {
                 </picture>
               </div>
 
-              {}
+              { }
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-              {}
+              { }
               <div className="absolute top-4 right-4 z-10">
                 <span className="font-mono text-3xl font-light text-white/15 tracking-wider">
                   0{project.id}
                 </span>
               </div>
 
-              {}
+              { }
               <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.8)]" />
@@ -373,7 +373,7 @@ export default function ProjectGallery({ onOpenProject }) {
                   {project.title}
                 </h3>
 
-                {}
+                { }
                 <div className="mt-3 flex items-center gap-2 text-cyan-400">
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-bold">View Project</span>
                   <ArrowUpRight size={14} strokeWidth={2.5} />
@@ -387,11 +387,11 @@ export default function ProjectGallery({ onOpenProject }) {
     );
   }
 
-  
+
   return (
     <section ref={sectionRef} className="relative bg-neutral-900 overflow-hidden h-[100dvh]">
 
-      {}
+      { }
       <Gsap.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -405,13 +405,13 @@ export default function ProjectGallery({ onOpenProject }) {
         <div className="flex-1 h-[1px] bg-white/5" />
       </Gsap.div>
 
-      {}
+      { }
       <div className="flex w-full h-[100dvh] items-center overflow-hidden">
         <Gsap.div
           ref={trackRef}
           className="flex gap-12 px-24"
         >
-          {}
+          { }
           <Gsap.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -428,7 +428,7 @@ export default function ProjectGallery({ onOpenProject }) {
             <ArrowUpRight className="text-cyan-400 w-24 h-24 mt-8" />
           </Gsap.div>
 
-          {}
+          { }
           {projects.map((project, index) => (
             <Gsap.div
               key={project.id}
@@ -471,10 +471,10 @@ export default function ProjectGallery({ onOpenProject }) {
                 </picture>
               </div>
 
-              {}
+              { }
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity duration-500" />
 
-              {}
+              { }
               <div className="absolute bottom-0 left-0 w-full p-10 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
                 <div className="flex justify-between items-end gap-4">
                   <div className="flex-1 min-w-0">
@@ -487,14 +487,14 @@ export default function ProjectGallery({ onOpenProject }) {
                     <h3 className="text-4xl lg:text-5xl font-black uppercase text-white tracking-tight leading-[1.1]">{project.title}</h3>
                   </div>
 
-                  {}
+                  { }
                   <div className="w-14 h-14 bg-white/10 border border-white/20 text-white flex items-center justify-center rounded-full shrink-0 group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 transition-all duration-300 shadow-lg">
                     <ArrowUpRight size={24} strokeWidth={2} className="group-hover:rotate-45 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
 
-              {}
+              { }
               <Gsap.div
                 className="absolute top-0 right-0 p-8"
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -516,7 +516,7 @@ export default function ProjectGallery({ onOpenProject }) {
         </Gsap.div>
       </div>
 
-      {}
+      { }
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
         {projects.map((_, index) => {
           const isActive = index === activeProjectIndex;

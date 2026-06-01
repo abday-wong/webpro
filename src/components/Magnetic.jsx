@@ -11,7 +11,7 @@ const Magnetic = memo(function Magnetic({ children }) {
     const x = useGsapMotionValue(0);
     const y = useGsapMotionValue(0);
 
-    
+
     if (!HAS_FINE_POINTER) {
         return children;
     }

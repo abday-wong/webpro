@@ -11,7 +11,7 @@ const Cursor = memo(function Cursor() {
     const [hovered, setHovered] = useState(false);
 
     useEffect(() => {
-        
+
         if (!hasPointerDevice()) return;
 
         let rafId = null;
@@ -22,7 +22,7 @@ const Cursor = memo(function Cursor() {
             if (rafId === null) {
                 rafId = requestAnimationFrame(() => {
                     if (cursorRef.current) {
-                        const offset = 8; 
+                        const offset = 8;
                         cursorRef.current.style.transform = `translate3d(${positionRef.current.x - offset}px, ${positionRef.current.y - offset}px, 0)`;
                     }
                     rafId = null;
@@ -30,7 +30,7 @@ const Cursor = memo(function Cursor() {
             }
         };
 
-        
+
         const updateHovered = (nextHovered) => {
             if (hoveredRef.current === nextHovered) return;
             hoveredRef.current = nextHovered;
@@ -61,7 +61,7 @@ const Cursor = memo(function Cursor() {
         };
     }, []);
 
-    
+
     if (!hasPointerDevice()) return null;
 
     return (

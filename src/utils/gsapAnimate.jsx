@@ -178,124 +178,124 @@ const applyMotionStyle = (element, values) => {
 
 const createMotionComponent = (Tag) => {
   const MotionComponent = forwardRef(function MotionComponent(props, forwardedRef) {
-  const {
-    initial,
-    animate,
-    transition,
-    whileInView,
-    viewport,
-    whileHover,
-    variants,
-    custom,
-    __motionExit,
-    style,
-    onMouseEnter,
-    onMouseLeave,
-    ...rest
-  } = props;
+    const {
+      initial,
+      animate,
+      transition,
+      whileInView,
+      viewport,
+      whileHover,
+      variants,
+      custom,
+      __motionExit,
+      style,
+      onMouseEnter,
+      onMouseLeave,
+      ...rest
+    } = props;
 
-  const localRef = useRef(null);
-  const motionValuesRef = useRef({});
-  const baseTransformRef = useRef({});
-  const setRef = (node) => {
-    localRef.current = node;
-    if (typeof forwardedRef === 'function') forwardedRef(node);
-    else if (forwardedRef) forwardedRef.current = node;
-  };
-
-  const domProps = {};
-  Object.entries(rest).forEach(([key, value]) => {
-    if (!MOTION_KEYS.has(key)) domProps[key] = value;
-  });
-
-  const staticStyle = resolveStaticStyle(style, motionValuesRef);
-
-  useEffect(() => {
-    const element = localRef.current;
-    if (!element) return undefined;
-
-    const unsubscribers = Object.entries(motionValuesRef.current).map(([key, motionValue]) => (
-      motionValue.onChange((value) => {
-        baseTransformRef.current[key] = value;
-        applyMotionStyle(element, baseTransformRef.current);
-      })
-    ));
-
-    return () => unsubscribers.forEach((unsubscribe) => unsubscribe());
-  }, []);
-
-  useEffect(() => {
-    const element = localRef.current;
-    if (!element) return undefined;
-
-    let cancelled = false;
-    let observer;
-
-    const run = async () => {
-      const exitVars = resolveVariant(props.exit, variants, custom);
-      if (__motionExit) {
-        if (exitVars) animateElement(element, exitVars, transition);
-        return;
-      }
-
-      const initialVars = resolveVariant(initial, variants, custom);
-      const animateVars = resolveVariant(animate, variants, custom);
-      const inViewVars = resolveVariant(whileInView, variants, custom);
-
-      if (initialVars) await setElement(element, initialVars);
-      if (cancelled) return;
-
-      if (inViewVars) {
-        observer = new IntersectionObserver((entries) => {
-          const entry = entries[0];
-          if (!entry?.isIntersecting) return;
-          animateElement(element, inViewVars, transition);
-          if (viewport?.once !== false) observer.disconnect();
-        }, {
-          threshold: viewport?.amount ?? 0.1,
-          rootMargin: viewport?.margin ?? '0px',
-        });
-        observer.observe(element);
-        return;
-      }
-
-      if (animateVars) {
-        animateElement(element, animateVars, transition);
-      }
+    const localRef = useRef(null);
+    const motionValuesRef = useRef({});
+    const baseTransformRef = useRef({});
+    const setRef = (node) => {
+      localRef.current = node;
+      if (typeof forwardedRef === 'function') forwardedRef(node);
+      else if (forwardedRef) forwardedRef.current = node;
     };
 
-    run();
+    const domProps = {};
+    Object.entries(rest).forEach(([key, value]) => {
+      if (!MOTION_KEYS.has(key)) domProps[key] = value;
+    });
 
-    return () => {
-      cancelled = true;
-      if (observer) observer.disconnect();
+    const staticStyle = resolveStaticStyle(style, motionValuesRef);
+
+    useEffect(() => {
+      const element = localRef.current;
+      if (!element) return undefined;
+
+      const unsubscribers = Object.entries(motionValuesRef.current).map(([key, motionValue]) => (
+        motionValue.onChange((value) => {
+          baseTransformRef.current[key] = value;
+          applyMotionStyle(element, baseTransformRef.current);
+        })
+      ));
+
+      return () => unsubscribers.forEach((unsubscribe) => unsubscribe());
+    }, []);
+
+    useEffect(() => {
+      const element = localRef.current;
+      if (!element) return undefined;
+
+      let cancelled = false;
+      let observer;
+
+      const run = async () => {
+        const exitVars = resolveVariant(props.exit, variants, custom);
+        if (__motionExit) {
+          if (exitVars) animateElement(element, exitVars, transition);
+          return;
+        }
+
+        const initialVars = resolveVariant(initial, variants, custom);
+        const animateVars = resolveVariant(animate, variants, custom);
+        const inViewVars = resolveVariant(whileInView, variants, custom);
+
+        if (initialVars) await setElement(element, initialVars);
+        if (cancelled) return;
+
+        if (inViewVars) {
+          observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (!entry?.isIntersecting) return;
+            animateElement(element, inViewVars, transition);
+            if (viewport?.once !== false) observer.disconnect();
+          }, {
+            threshold: viewport?.amount ?? 0.1,
+            rootMargin: viewport?.margin ?? '0px',
+          });
+          observer.observe(element);
+          return;
+        }
+
+        if (animateVars) {
+          animateElement(element, animateVars, transition);
+        }
+      };
+
+      run();
+
+      return () => {
+        cancelled = true;
+        if (observer) observer.disconnect();
+      };
+    }, [__motionExit, animate, custom, initial, props.exit, transition, variants, viewport, whileInView]);
+
+    const handleMouseEnter = (event) => {
+      if (whileHover) animateElement(localRef.current, whileHover, { duration: 0.25, ease: 'power3.out' });
+      onMouseEnter?.(event);
     };
-  }, [__motionExit, animate, custom, initial, props.exit, transition, variants, viewport, whileInView]);
 
-  const handleMouseEnter = (event) => {
-    if (whileHover) animateElement(localRef.current, whileHover, { duration: 0.25, ease: 'power3.out' });
-    onMouseEnter?.(event);
-  };
+    const handleMouseLeave = (event) => {
+      if (whileHover) {
+        const target = resolveVariant(animate, variants, custom)
+          || resolveVariant(whileInView, variants, custom)
+          || {};
+        animateElement(localRef.current, target, { duration: 0.25, ease: 'power3.out' });
+      }
+      onMouseLeave?.(event);
+    };
 
-  const handleMouseLeave = (event) => {
-    if (whileHover) {
-      const target = resolveVariant(animate, variants, custom)
-        || resolveVariant(whileInView, variants, custom)
-        || {};
-      animateElement(localRef.current, target, { duration: 0.25, ease: 'power3.out' });
-    }
-    onMouseLeave?.(event);
-  };
-
-  return (
-    <Tag
-      ref={setRef}
-      style={staticStyle}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...domProps}
-    />
-  );
+    return (
+      <Tag
+        ref={setRef}
+        style={staticStyle}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...domProps}
+      />
+    );
   });
 
   MotionComponent.__isGsapMotion = true;
