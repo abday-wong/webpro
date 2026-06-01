@@ -37,7 +37,7 @@ const OFF_TOPIC_PATTERNS = [
   /\b(hitung|calculate|berapa\s+\d|what\s+is\s+\d|\d\s*[+\-*/]\s*\d)/i,
   
   /\b(siapa\s+presiden|who\s+is\s+the\s+president|capital\s+of|ibu\s*kota)\b/i,
-  /\b(apa\s+itu|what\s+is)\s+(?!abday|wong|portofolio|portfolio|project|projek)/i,
+  /\b(apa\s+itu|what\s+is)\s+(?!abday|wong|hafidz|portofolio|portfolio|project|projek)/i,
   
   /\b(cuaca|weather|berita|news|gosip)\b/i,
   
@@ -52,7 +52,7 @@ const OFF_TOPIC_PATTERNS = [
 
 
 const ON_TOPIC_OVERRIDES = [
-  /abday|wong/i,
+  /abday|wong|hafidz/i,
   /portofolio|portfolio/i,
   /project|projek|proyek/i,
   ...PROJECT_META.flatMap(p => [

@@ -241,7 +241,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(4.25rem,14vw,9rem)] font-black uppercase tracking-tight text-transparent leading-[0.88] mt-2 sm:mt-0 font-outline-fallback"
           >
-            WONG
+            HAFIDZ
           </Gsap.h1>
 
           {}

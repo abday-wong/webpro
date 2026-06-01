@@ -66,7 +66,7 @@ const Preloader = ({ onComplete }) => {
         >
             {}
             <div className="flex justify-between items-start uppercase text-xs md:text-sm tracking-widest opacity-50">
-                <span>Abday Wong Portfolio</span>
+                <span>Abday Hafidz Portfolio</span>
                 <span>©2026</span>
             </div>
 

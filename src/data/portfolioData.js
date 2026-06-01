@@ -77,7 +77,7 @@ export const PORTFOLIO_DATA = {
             title: "Created & Released YokNabung 💰",
             project: "YokNabung",
             description: "Developed and shipped a complete gamified savings tracker. Engineered features like daily local reminders, interactive charts, persistent state, and custom milestone tiers.",
-            team: "Muhammad Abday Abdul Hafidz (Abday Wong)",
+            team: "Muhammad Abday Abdul Hafidz (Abday Hafidz)",
             track: "Flutter Development",
             techStack: ["Flutter", "Dart", "Provider", "SharedPreferences", "fl_chart", "Local Notifications"],
             links: {
