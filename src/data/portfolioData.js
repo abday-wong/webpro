@@ -8,7 +8,7 @@ export const PORTFOLIO_DATA = {
         socials: {
             github: "https://github.com/abday-wong",
             instagram: "https://www.instagram.com/amamiya_day?igsh=YnJ6NDhuZmZud3lu",
-            linkedin: "#"
+            linkedin: "https://www.linkedin.com/in/muhammad-abday-abdul-hafidz-41a3352a5/"
         }
     },
     experience: [

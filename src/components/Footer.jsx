@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from 'react';
 import { Gsap } from '../utils/gsapAnimate';
-import { Github, Instagram, Mail, ArrowUpRight } from 'lucide-react';
+import { Github, Instagram, Mail, Linkedin, ArrowUpRight } from 'lucide-react';
 import { exponentialEaseOut } from '../utils/easing';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -114,6 +114,7 @@ const Footer = memo(function Footer() {
               {[
                 { label: 'Email', href: `https://mail.google.com/mail/?view=cm&fs=1&to=${PORTFOLIO_DATA.profile.email}`, icon: Mail },
                 { label: 'GitHub', href: PORTFOLIO_DATA.profile.socials.github, icon: Github },
+                { label: 'LinkedIn', href: PORTFOLIO_DATA.profile.socials.linkedin, icon: Linkedin },
                 { label: 'Instagram', href: PORTFOLIO_DATA.profile.socials.instagram, icon: Instagram },
               ].map((link) => (
                 <a
