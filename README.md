@@ -1,187 +1,122 @@
-# Portfolio Dev
+# Abday Hafidz — Developer Portfolio (Persona 5 Royal Edition) 🌟
 
-Portfolio Dev adalah website portfolio interaktif berbasis React + Vite untuk menampilkan profil, project case study, experience, tech stack, GitHub stats, dan terminal chat AI.
+Developer portfolio interaktif yang sepenuhnya di-rebrand dengan estetika visual game **Persona 5 Royal**. Dilengkapi dengan loading animation "Calling Card" khas Atlus, halftone grid, skew/slanted blocks, high-contrast Atlus Acid Red (`#e60012`), and an interactive AI terminal chat.
 
-## Gambaran Singkat
+---
 
-Alur utamanya dibuat sederhana: pengunjung masuk ke halaman utama, membaca profil, melihat project dan detailnya, mengecek experience serta tech stack, lalu bisa mencoba terminal chat untuk navigasi cepat atau membaca konteks project tertentu.
+## 🎨 Persona 5 Royal Aesthetics & Features
 
-Fitur utamanya:
+- **Preloader Calling Card:** Animasi diagonal slash loading bar, skewed name blocks, dan dynamic loading star.
+- **Theme Color Palette:** Kombinasi kontras tinggi antara Hitam, Putih, dan **Atlus Acid Red (`#e60012`)**.
+- **Slanted Layouts:** Penggunaan `.p5-skew-x`, `.p5-skew-y`, dan `.p5-skew-both` untuk memberikan layout visual asimetris yang dinamis khas Atlus UI.
+- **Halftone Patterns:** Efek overlay dot pattern (`.p5-halftone-bg` & `.p5-halftone-dark`) untuk visual background yang retro-modern.
+- **AI Terminal Chat Widget:** Chat widget berbentuk command-line terminal yang mendukung command lokal (`help`, `ls`, `cat <slug>`, `history`, `clear`) dan integrasi AI (Cerebras LLaMA).
+- **GSAP & ScrollTrigger Animations:** Transisi scroll yang mulus, didukung oleh smooth scrolling dari **Lenis**.
 
-- Animasi modern dengan GSAP + ScrollTrigger.
-- Smooth scrolling dengan Lenis.
-- Project gallery dengan detail berbasis route/modal.
-- Chat widget gaya terminal dengan command lokal seperti `help`, `ls`, dan `cat <slug>`.
-- Section registry terpusat supaya navigasi dan chat tetap konsisten.
+---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React 19
-- Vite
-- Tailwind CSS
-- GSAP + ScrollTrigger
-- Lenis
-- React Router
+- **Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS + Custom CSS tokens (P5R elements)
+- **Animation:** GSAP (GreenSock) + ScrollTrigger
+- **Scroll Logic:** Lenis Smooth Scroll
+- **Routing:** React Router
 
-## Prasyarat
+---
 
-- Node.js 22 atau lebih baru
-- npm 10 atau lebih baru
+## 🚀 Prasyarat
 
-## Mulai Dari Nol
+- **Node.js:** Versi 22 atau lebih baru
+- **npm:** Versi 10 atau lebih baru
 
-### 1. Clone repository
+---
 
+## 💻 Cara Menjalankan Project Secara Lokal
+
+### 1. Clone Repository
 ```bash
-git clone https://github.com/zickrian/Portfolio-dev.git
-cd Portfolio-dev
+git clone https://github.com/abday-wong/abdayhafidz.git
+cd abdayhafidz
 ```
 
-### 2. Install dependency
-
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-### 3. Tambahkan environment variable untuk AI chat
-
-Buat file `.env` di root project, lalu isi salah satu variabel berikut:
-
+### 3. Konfigurasi Environment Variables
+Buat file `.env` di root direktori project, kemudian tambahkan API key Cerebras untuk mengaktifkan AI respon di chat widget:
 ```env
-VITE_CEREBRAS_API_KEY=your_key_here
+VITE_CEREBRAS_API_KEY=your_cerebras_key_here
 ```
+*Catatan: Jika API key tidak diisi, command lokal di terminal tetap dapat berfungsi secara offline.*
 
-Kalau kamu masih memakai format lama, repo ini juga tetap membaca:
-
-```env
-REACT_APP_CEREBRAS_API_KEY=your_key_here
-```
-
-Catatan:
-
-- Kalau tidak ada API key, command lokal tetap jalan normal.
-- AI response hanya aktif kalau salah satu key di atas tersedia.
-
-### 4. Jalankan development server
-
+### 4. Jalankan Development Server
 ```bash
 npm run dev
 ```
+Buka URL `http://localhost:5173` di web browser Anda.
 
-Buka URL yang ditampilkan Vite, biasanya `http://localhost:5173`.
-
-### 5. Build production
-
+### 5. Build Project (Production)
 ```bash
 npm run build
 ```
+Hasil file build production akan diekspor ke folder `build/`.
 
-Hasil build akan masuk ke folder `build/`.
-
-### 6. Preview hasil build
-
+### 6. Preview Hasil Build
 ```bash
 npm run preview
 ```
 
-### 7. Cek sebelum deploy
+---
 
-```bash
-npm run check
-```
-
-Perintah ini menjalankan build production lalu audit dependency production.
-
-## Script Yang Tersedia
-
-- `npm run dev` untuk menjalankan development server.
-- `npm run start` sama seperti `npm run dev`.
-- `npm run build` untuk menghasilkan production build.
-- `npm run preview` untuk preview hasil build lokal.
-- `npm run check` untuk build + audit dependency.
-
-## Struktur Project
+## 📂 Struktur Direktori
 
 ```text
 .
 ├── index.html
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── components/projects/
-│   ├── data/
-│   ├── hooks/
-│   ├── pages/
-│   ├── projectDetails/
-│   ├── services/
-│   └── utils/
+│   ├── components/            # Komponen visual (Navbar, Preloader, dll)
+│   ├── data/                  # Data statis portfolio (portfolioData, projectMeta)
+│   ├── hooks/                 # Custom React hooks
+│   ├── pages/                 # Halaman utama (Home.jsx)
+│   ├── projectDetails/        # Komponen detail showcase case-studies
+│   ├── services/              # Integrasi AI Cerebras & Context Builder
+│   └── utils/                 # Utility helpers (GSAP animations)
 ├── tailwind.config.js
 ├── vite.config.js
-└── build/
+└── build/                     # Folder output production build
 ```
 
-## Cara Kerja Konten
+---
 
-Kalau kamu ingin mengubah isi portfolio tanpa mengutak-atik layout besar, fokus ke file berikut:
+## 📝 Mengedit Konten Portfolio
 
-- Profile, experience, tech stack, projects, achievements, dan capabilities: `src/data/portfolioData.js`
-- Metadata kartu project di gallery: `src/data/projectMeta.js`
-- Konten detail project yang dipakai chat `cat <slug>`: `src/data/projectDetailsData.js`
-- Daftar section yang bisa di-scroll lewat chat dan navbar: `src/data/sectionRegistry.js`
-- Detail route custom per project: `src/projectDetails/projectRegistry.js`
+Untuk mengubah data portofolio tanpa merusak visual layout, cukup edit file berikut:
+- **Profil, Skills, Capabilities, & Achievements:** `src/data/portfolioData.js`
+- **Metadata Card Projects:** `src/data/projectMeta.js`
+- **Detail Project (Showcase):** `src/data/projectDetailsData.js`
+- **Section Router & Registry:** `src/data/sectionRegistry.js`
 
-### Menambah project baru
+---
 
-1. Tambahkan metadata project di `src/data/projectMeta.js`.
-2. Tambahkan data detail dengan `slug` yang sama di `src/data/projectDetailsData.js`.
-3. Jika butuh tampilan detail custom, buat komponen baru di `src/projectDetails/`.
-4. Daftarkan komponen tersebut di `src/projectDetails/projectRegistry.js`.
+## 💬 Terminal Commands (Chat Widget)
 
-### Menambah section baru
+Terminal chat interaktif di pojok kanan bawah mendukung command-command berikut:
+- `help` — Menampilkan list command yang tersedia.
+- `ls` — Menampilkan daftar project case study yang dipublikasikan.
+- `cat <slug>` — Membaca detail case study (contoh: `cat yoknabung`).
+- `history` — Menampilkan riwayat input perintah Anda.
+- `clear` — Membersihkan layar terminal.
 
-1. Tambahkan section ke `src/data/sectionRegistry.js`.
-2. Pastikan komponen memiliki `elementId` yang cocok.
-3. Chat widget dan intent router akan ikut membaca section baru itu.
+---
 
-## Chat Widget
+## 🌐 Deploy
+Project ini dioptimalkan untuk di-deploy ke platform cloud statis seperti **Vercel** atau **Netlify**.
 
-Chat widget punya dua mode:
+---
 
-- Command lokal selalu aktif.
-- AI response aktif jika API key Cerebras tersedia.
-
-Command yang didukung:
-
-- `help`
-- `ls`
-- `cat <slug>`
-- `history`
-- `clear`
-
-Kalau kamu ingin menyesuaikan perilaku AI atau konteks section, cek `src/services/cerebras.js`, `src/services/aiContext.js`, dan `src/data/sectionRegistry.js`.
-
-## Asset Penting
-
-- Foto about: `public/profilee.webp`
-- Foto preload hero: `public/profile.webp`
-- Gambar OG/Twitter: `public/og-icon.png`
-- Galeri hackathon: `public/hackathon-base/`
-- CV: `public/cv.pdf`
-
-## Deploy
-
-Deploy hasil folder `build/` ke hosting statis seperti Netlify, Vercel, atau Cloudflare Pages.
-
-Karena ini SPA, pastikan rewrite/fallback route diarahkan ke `index.html` supaya route seperti detail project tetap aman saat dibuka langsung.
-
-## Troubleshooting
-
-- AI tidak merespons: cek `.env`, pastikan API key terisi, lalu restart dev server.
-- Command chat jalan tapi AI gagal: biasanya karena key, limit, atau koneksi jaringan.
-- Build tidak muncul di folder yang diharapkan: hasilnya ada di `build/`, bukan `dist/`.
-- CV tidak sesuai: ganti file `public/cv.pdf`.
-- GitHub stats kosong: kemungkinan kena rate limit API publik.
-
-## License
-
-Repository ini belum menyertakan lisensi open-source.
+## 📄 Lisensi
+Repository ini dimiliki oleh Abday Hafidz. All rights reserved.
