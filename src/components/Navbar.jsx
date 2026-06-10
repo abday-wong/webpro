@@ -139,7 +139,7 @@ const Navbar = memo(function Navbar() {
             className={`fixed inset-0 z-40 pointer-events-auto lg:hidden backdrop-blur-md overflow-hidden ${isOnDarkSection ? 'bg-black/72' : 'bg-[#F5F4EF]/96'}`}
           >
             <div className={`absolute inset-0 opacity-[0.1] pointer-events-none [background-size:28px_28px] ${isOnDarkSection ? '[background-image:linear-gradient(to_right,rgba(255,255,255,0.24)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.24)_1px,transparent_1px)]' : '[background-image:linear-gradient(to_right,rgba(0,0,0,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.16)_1px,transparent_1px)]'}`} />
-            <div className="absolute -top-24 -right-16 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl pointer-events-none" />
+            <div className="absolute -top-24 -right-16 w-72 h-72 rounded-full bg-red-600/15 blur-3xl pointer-events-none" />
             <div className={`absolute -bottom-24 -left-10 w-64 h-64 rounded-full blur-3xl pointer-events-none ${isOnDarkSection ? 'bg-white/12' : 'bg-white/40'}`} />
             <div className={`absolute inset-0 pointer-events-none ${isOnDarkSection ? 'bg-[radial-gradient(circle_at_15%_5%,rgba(255,255,255,0.14),rgba(0,0,0,0)_48%)]' : 'bg-[radial-gradient(circle_at_15%_5%,rgba(255,255,255,0.7),rgba(245,244,239,0)_48%)]'}`} />
 
@@ -153,7 +153,7 @@ const Navbar = memo(function Navbar() {
               <div className={`w-full max-w-md mx-auto pb-4 border-b flex items-center justify-between ${isOnDarkSection ? 'border-white/20' : 'border-black/15'}`}>
                 <span className={`font-mono text-[10px] uppercase tracking-[0.22em] ${isOnDarkSection ? 'text-white/65' : 'text-black/45'}`}>Navigation Matrix</span>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-600" />
                   <span className={`font-mono text-[10px] tracking-[0.14em] ${isOnDarkSection ? 'text-white/55' : 'text-black/35'}`}>MOBILE</span>
                 </div>
               </div>
@@ -229,13 +229,13 @@ const Navbar = memo(function Navbar() {
         <Magnetic>
           <button
             onClick={() => scrollTo('contact-section')}
-            className={`group relative overflow-hidden flex items-center gap-3 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500 ${isOnDarkSection ? 'bg-white text-black' : 'bg-black text-white'}`}
+            className={`group relative overflow-hidden flex items-center gap-3 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] hover:shadow-[0_0_30px_rgba(239, 68, 68,0.3)] transition-all duration-500 ${isOnDarkSection ? 'bg-white text-black' : 'bg-black text-white'}`}
           >
             {/* Core Label */}
             <span className="relative z-10 pl-2">Let's Talk</span>
 
             {}
-            <div className="relative z-10 w-7 h-7 bg-cyan-400 rounded-full flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300">
+            <div className="relative z-10 w-7 h-7 bg-red-600 rounded-full flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300">
               <ArrowUpRight size={14} strokeWidth={2.5} className="group-hover:rotate-45 transition-transform duration-300" />
             </div>
           </button>

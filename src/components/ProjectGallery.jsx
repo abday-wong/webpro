@@ -281,7 +281,7 @@ export default function ProjectGallery({ onOpenProject }) {
         { }
         <div className="px-6 mb-10">
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+            <div className="w-2 h-2 bg-red-600 rounded-full shadow-[0_0_8px_rgba(239, 68, 68,0.8)]" />
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
               02. Past_Explorations
             </span>
@@ -290,7 +290,7 @@ export default function ProjectGallery({ onOpenProject }) {
 
           <h2 className="text-5xl font-black text-white uppercase leading-[0.92] tracking-tight">
             Past<br />
-            <span className="text-cyan-400">Explorations</span>
+            <span className="text-red-500">Explorations</span>
           </h2>
           <p className="mt-4 text-neutral-400 text-sm leading-6 max-w-sm">
             Transforming ideas into real-world applications.
@@ -306,7 +306,7 @@ export default function ProjectGallery({ onOpenProject }) {
             {projects.map((_, i) => (
               <div
                 key={i}
-                className={`h-1 rounded-full transition-all duration-300 ${i === activeProjectIndex ? 'w-6 bg-cyan-400' : 'w-1.5 bg-white/20'}`}
+                className={`h-1 rounded-full transition-all duration-300 ${i === activeProjectIndex ? 'w-6 bg-red-600' : 'w-1.5 bg-white/20'}`}
               />
             ))}
           </div>
@@ -364,7 +364,7 @@ export default function ProjectGallery({ onOpenProject }) {
               { }
               <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.8)]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-600 shadow-[0_0_6px_rgba(239, 68, 68,0.8)]" />
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.16em] text-white/70">
                     {project.category}
                   </span>
@@ -374,7 +374,7 @@ export default function ProjectGallery({ onOpenProject }) {
                 </h3>
 
                 { }
-                <div className="mt-3 flex items-center gap-2 text-cyan-400">
+                <div className="mt-3 flex items-center gap-2 text-red-500">
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-bold">View Project</span>
                   <ArrowUpRight size={14} strokeWidth={2.5} />
                 </div>
@@ -398,7 +398,7 @@ export default function ProjectGallery({ onOpenProject }) {
         viewport={{ once: true }}
         className="absolute top-16 left-24 right-24 flex items-center gap-4 z-20 pointer-events-none"
       >
-        <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+        <div className="w-2 h-2 bg-red-600 rounded-full shadow-[0_0_8px_rgba(239, 68, 68,0.8)]" />
         <span className="font-mono text-xs font-bold uppercase tracking-[0.26em] text-white/40">
           02. Past_Explorations
         </span>
@@ -420,12 +420,12 @@ export default function ProjectGallery({ onOpenProject }) {
           >
             <h2 className="text-5xl lg:text-7xl font-black text-white uppercase leading-[0.92] tracking-tighter">
               Past<br />
-              <span className="text-cyan-400">Explorations</span>
+              <span className="text-red-500">Explorations</span>
             </h2>
             <p className="mt-8 text-neutral-300 max-w-md text-lg leading-7">
               Transforming ideas into real-world applications.
             </p>
-            <ArrowUpRight className="text-cyan-400 w-24 h-24 mt-8" />
+            <ArrowUpRight className="text-red-500 w-24 h-24 mt-8" />
           </Gsap.div>
 
           { }
@@ -439,7 +439,7 @@ export default function ProjectGallery({ onOpenProject }) {
               onKeyDown={(e) => {
                 if (e.key === "Enter") onOpenProject?.(project);
               }}
-              className="project-card group relative h-[70vh] w-[45vw] shrink-0 overflow-hidden rounded-[4px] border border-white/10 bg-neutral-900 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.1)] active:scale-[0.98] cursor-pointer"
+              className="project-card group relative h-[70vh] w-[45vw] shrink-0 overflow-hidden rounded-[4px] border border-white/10 bg-neutral-900 transition-all duration-500 hover:border-red-600/50 hover:shadow-[0_0_40px_rgba(239, 68, 68,0.1)] active:scale-[0.98] cursor-pointer"
               data-project-index={index}
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
@@ -479,7 +479,7 @@ export default function ProjectGallery({ onOpenProject }) {
                 <div className="flex justify-between items-end gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-600 shadow-[0_0_8px_rgba(239, 68, 68,0.8)]" />
                       <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-white/80">
                         {project.category}
                       </span>
@@ -488,7 +488,7 @@ export default function ProjectGallery({ onOpenProject }) {
                   </div>
 
                   { }
-                  <div className="w-14 h-14 bg-white/10 border border-white/20 text-white flex items-center justify-center rounded-full shrink-0 group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 transition-all duration-300 shadow-lg">
+                  <div className="w-14 h-14 bg-white/10 border border-white/20 text-white flex items-center justify-center rounded-full shrink-0 group-hover:bg-red-600 group-hover:text-black group-hover:border-red-600 transition-all duration-300 shadow-lg">
                     <ArrowUpRight size={24} strokeWidth={2} className="group-hover:rotate-45 transition-transform duration-300" />
                   </div>
                 </div>
@@ -503,7 +503,7 @@ export default function ProjectGallery({ onOpenProject }) {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <div className="flex items-start">
-                  <span className="font-mono text-sm text-cyan-400 font-bold mr-1 pt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">NO.</span>
+                  <span className="font-mono text-sm text-red-500 font-bold mr-1 pt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">NO.</span>
                   <span className="font-mono text-5xl font-light text-white/20 tracking-[0.18em] group-hover:text-white/40 transition-colors duration-500">
                     0{project.id}
                   </span>
@@ -523,7 +523,7 @@ export default function ProjectGallery({ onOpenProject }) {
           return (
             <div
               key={index}
-              className={`h-2 rounded-full transition-all duration-300 ${isActive ? 'w-8 bg-cyan-400' : 'w-2 bg-white/30'}`}
+              className={`h-2 rounded-full transition-all duration-300 ${isActive ? 'w-8 bg-red-600' : 'w-2 bg-white/30'}`}
             />
           );
         })}

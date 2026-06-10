@@ -109,13 +109,13 @@ body {
 
 /* Custom Text Selection Color */
 ::selection {
-  background-color: #22d3ee;
+  background-color: #ef4444;
   /* cyan-400 */
   color: #000000;
 }
 
 ::-moz-selection {
-  background-color: #22d3ee;
+  background-color: #ef4444;
   /* cyan-400 */
   color: #000000;
 }

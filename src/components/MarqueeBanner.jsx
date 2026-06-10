@@ -13,7 +13,7 @@ const skills = [
 const MarqueeBanner = memo(function MarqueeBanner() {
   return (
     <div className="relative z-20 sm:-rotate-[0.8deg] sm:scale-[1.02] cursor-default select-none">
-      <div className="bg-black shadow-[0_0_40px_rgba(34,211,238,0.08)]">
+      <div className="bg-black shadow-[0_0_40px_rgba(239, 68, 68,0.08)]">
 
         {}
         <div className="py-4 md:py-6 overflow-hidden relative group border-b border-neutral-800/60">
@@ -26,11 +26,11 @@ const MarqueeBanner = memo(function MarqueeBanner() {
                 {skills.map((skill, j) => (
                   <span key={j} className="flex items-center gap-6 md:gap-14">
                     <span
-                      className="text-cyan-400 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.6)]"
+                      className="text-red-500 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(239, 68, 68,0.6)]"
                     >
                       {skill}
                     </span>
-                    <span className="text-cyan-400/30 text-xs">✦</span>
+                    <span className="text-red-500/30 text-xs">✦</span>
                   </span>
                 ))}
               </div>
@@ -43,7 +43,7 @@ const MarqueeBanner = memo(function MarqueeBanner() {
         </div>
 
         {}
-        <div className="py-2.5 md:py-4 bg-cyan-400 overflow-hidden relative group">
+        <div className="py-2.5 md:py-4 bg-red-600 overflow-hidden relative group">
           <div
             className="flex whitespace-nowrap gap-6 md:gap-12 will-change-transform group-hover:[animation-play-state:paused]"
             style={{ animation: 'marquee-scroll-right 32s linear infinite' }}
@@ -61,8 +61,8 @@ const MarqueeBanner = memo(function MarqueeBanner() {
           </div>
 
           {}
-          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-cyan-400 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-cyan-400 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-red-600 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-red-600 to-transparent z-10 pointer-events-none" />
         </div>
 
       </div>

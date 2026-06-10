@@ -57,7 +57,7 @@ const Preloader = ({ onComplete }) => {
 
     return (
         <div
-            className={`fixed inset-0 z-[9999] bg-black text-cyan-400 flex flex-col justify-between p-4 md:p-10 font-mono overflow-hidden transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isExiting ? '-translate-y-full' : 'translate-y-0'}`}
+            className={`fixed inset-0 z-[9999] bg-black text-red-500 flex flex-col justify-between p-4 md:p-10 font-mono overflow-hidden transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isExiting ? '-translate-y-full' : 'translate-y-0'}`}
             style={{
                 willChange: 'transform',
                 backfaceVisibility: 'hidden',
@@ -77,13 +77,13 @@ const Preloader = ({ onComplete }) => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="text-xl md:text-3xl font-bold tracking-widest uppercase text-cyan-400"
+                    className="text-xl md:text-3xl font-bold tracking-widest uppercase text-red-500"
                 >
                     &gt; {words[index]}_
                 </Gsap.p>
 
                 {}
-                <div className="text-cyan-400 font-mono text-[10px] sm:text-xs md:text-sm leading-[1.1] md:leading-none whitespace-pre text-center md:text-left select-none overflow-hidden drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">
+                <div className="text-red-500 font-mono text-[10px] sm:text-xs md:text-sm leading-[1.1] md:leading-none whitespace-pre text-center md:text-left select-none overflow-hidden drop-shadow-[0_0_8px_rgba(239, 68, 68,0.5)]">
                     {(() => {
                         const width = typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 40;
                         const filled = Math.floor((progress / 100) * width);

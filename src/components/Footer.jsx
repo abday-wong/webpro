@@ -57,7 +57,7 @@ const Footer = memo(function Footer() {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-16 md:mb-24"
         >
-          <div className="w-2 h-2 bg-cyan-400 rounded-[2px] animate-pulse" />
+          <div className="w-2 h-2 bg-red-600 rounded-[2px] animate-pulse" />
           <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-white/40">
             {'// INITIALIZE_CONTACT'}
           </span>
@@ -72,7 +72,7 @@ const Footer = memo(function Footer() {
             <div>
               <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.95] sm:leading-[0.9] text-white mb-6">
                 LET'S <br />
-                <span className="text-cyan-400 transform inline-block italic pr-4">CONNECT.</span>
+                <span className="text-red-500 transform inline-block italic pr-4">CONNECT.</span>
               </h2>
               <p className="font-sans text-sm md:text-base text-white/60 max-w-md leading-7 md:leading-8">
                 Feel free to reach out for collaborations, mobile development projects, or just to say hello. Always open to exploring new opportunities.
@@ -96,12 +96,12 @@ const Footer = memo(function Footer() {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left font-mono text-xs md:text-sm font-bold uppercase text-white/60 hover:text-cyan-400 transition-colors flex items-center gap-3 group py-1"
+                  className="text-left font-mono text-xs md:text-sm font-bold uppercase text-white/60 hover:text-red-500 transition-colors flex items-center gap-3 group py-1"
                 >
-                  <span className="w-1.5 h-1.5 bg-white/20 group-hover:bg-cyan-400 transition-colors" />
+                  <span className="w-1.5 h-1.5 bg-white/20 group-hover:bg-red-600 transition-colors" />
                   <span className="tracking-[0.14em] md:tracking-[0.2em] relative">
                     {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-cyan-400 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-red-600 group-hover:w-full transition-all duration-300" />
                   </span>
                 </button>
               ))}
@@ -109,7 +109,7 @@ const Footer = memo(function Footer() {
 
             {/* Connect Links */}
             <div className="flex flex-col gap-4 min-w-[200px]">
-              <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] md:tracking-[0.24em] mb-4 border-l-2 border-cyan-400 pl-3">Networks</span>
+              <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] md:tracking-[0.24em] mb-4 border-l-2 border-red-600 pl-3">Networks</span>
 
               {[
                 { label: 'Email', href: `https://mail.google.com/mail/?view=cm&fs=1&to=${PORTFOLIO_DATA.profile.email}`, icon: Mail },
@@ -122,7 +122,7 @@ const Footer = memo(function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between border border-white/10 bg-[#111111] hover:bg-cyan-400 hover:border-cyan-400 transition-colors duration-300 p-3"
+                  className="group flex items-center justify-between border border-white/10 bg-[#111111] hover:bg-red-600 hover:border-red-600 transition-colors duration-300 p-3"
                 >
                   <div className="flex items-center gap-3">
                     <link.icon size={16} className="text-white/40 group-hover:text-black transition-colors" />
@@ -140,7 +140,7 @@ const Footer = memo(function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-4">
           <div className="flex items-center gap-3 font-mono text-[10px] md:text-xs text-white/40 uppercase tracking-[0.14em] md:tracking-[0.2em]">
             <span>SYS.STATUS:</span>
-            <div className="flex items-center gap-2 text-cyan-400 bg-cyan-400/10 px-2 flex-grow-0 min-w-16 justify-center py-0.5 border border-cyan-400/20 yg">
+            <div className="flex items-center gap-2 text-red-500 bg-red-600/10 px-2 flex-grow-0 min-w-16 justify-center py-0.5 border border-red-600/20 yg">
               ONLINE
             </div>
           </div>
