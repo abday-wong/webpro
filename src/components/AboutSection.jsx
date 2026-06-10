@@ -251,7 +251,7 @@ const AboutSection = memo(function AboutSection() {
               className="flex items-center gap-3 mb-8 md:mb-9"
             >
               <span className="font-mono text-[10px] md:text-[10.5px] uppercase tracking-[0.2em] text-white/35">
-                Mobile Apps · Neo-Brutalist UI/UX · Dart Expert
+                Mobile Apps · Modern UI Paradigms · Dart Expert
               </span>
             </Gsap.div>
 

@@ -2,7 +2,7 @@ export const PORTFOLIO_DATA = {
     profile: {
         name: "Muhammad Abday Abdul Hafidz",
         role: "Computer Science Engineering Student & Flutter Developer",
-        bio: "I'm a Computer Science Engineering student and Flutter developer passionate about crafting beautiful mobile experiences. I specialize in Neo-Brutalist UI design and building apps that are both functional and visually striking. Currently based in West Java, Indonesia, I love turning complex problems into elegant solutions.",
+        bio: "I'm a Computer Science Engineering student and Flutter developer passionate about crafting beautiful mobile experiences. I specialize in modern UI paradigms—including Neumorphism, Glassmorphism, and Neo-Brutalism—to build apps that are both functional and visually striking. Currently based in West Java, Indonesia, I love turning complex problems into elegant solutions.",
         location: "West Java, Indonesia",
         email: "abday.hafidz23@gmail.com",
         socials: {
@@ -35,7 +35,7 @@ export const PORTFOLIO_DATA = {
             description: [
                 "Designing high-fidelity interactive wireframes, UI mockups, and components in Figma.",
                 "Translating Figma design system specs pixel-for-pixel into clean, maintainable Flutter widgets.",
-                "Exploring advanced mobile UI paradigms, specializing in Neo-Brutalist and glassmorphic designs."
+                "Exploring advanced mobile UI paradigms, implementing Neumorphic, Glassmorphic, and Neo-Brutalist designs."
             ]
         }
     ],
@@ -50,7 +50,7 @@ export const PORTFOLIO_DATA = {
         { name: "Figma", category: "Design" },
         { name: "Git & GitHub", category: "Tools" },
         { name: "VS Code", category: "Tools" },
-        { name: "Neo-Brutalist Design", category: "UI/UX" }
+        { name: "Modern UI Design (Neumorphism, Glassmorphism, Brutalism)", category: "UI/UX" }
     ],
     projects: [
         {
@@ -82,7 +82,7 @@ export const PORTFOLIO_DATA = {
     capabilities: [
         "Flutter & Dart Development",
         "UI/UX Design & Prototyping (Figma)",
-        "Neo-Brutalist Design Concepts",
+        "Modern UI Paradigms (Neumorphism, Glassmorphism, Brutalism)",
         "State Management (Provider)",
         "Local Persistence & Notifications",
         "Responsive Web Design",
