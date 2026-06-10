@@ -81,7 +81,7 @@ export const PROJECT_DETAILS_DATA = {
       "Engages tech-focused visitors by offering a command-line interface directly on the portfolio."
     ],
     links: {
-      repo: "https://github.com/abday-wong/webpro",
+      repo: "https://github.com/abday-wong/abday-hafidz",
     },
   },
 };

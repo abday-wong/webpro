@@ -28,7 +28,7 @@ export const project = {
     "Ensures lightning-fast loading speeds using Vite build bundling and lazy component rendering."
   ],
   links: {
-    repo: "https://github.com/abday-wong/webpro",
+    repo: "https://github.com/abday-wong/abday-hafidz",
   },
 };
 
