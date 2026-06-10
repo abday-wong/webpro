@@ -5,6 +5,7 @@ const PROJECT_DETAIL_COMPONENTS = {
   yoknabung: lazy(() => import("./YokNabungDetail")),
   "project-alpha": lazy(() => import("./ProjectAlphaDetail")),
   "web-portfolio": lazy(() => import("./WebPortfolioDetail")),
+  alphecci: lazy(() => import("./AlphecciDetail")),
 };
 
 export function getProjectRouteConfig(slug) {

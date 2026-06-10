@@ -84,4 +84,32 @@ export const PROJECT_DETAILS_DATA = {
       repo: "https://github.com/abday-wong/abday-hafidz",
     },
   },
+  alphecci: {
+    title: "Alphecci 🏛️",
+    category: "Digital Product Studio",
+    tagline:
+      "A premium, state-of-the-art digital product studio landing page built with React and Vite, featuring a warm-ivory neomorphic design system.",
+    year: "2025",
+    stack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "CSS Neomorphism",
+      "Interactive Components"
+    ],
+    features: [
+      "Warm-Ivory Neomorphism: A clean, bespoke design system utilizing soft double-shadowing and pillowy UI elements.",
+      "Interactive Services Catalog: Details core offerings (UI/UX design, custom software, AI development) with interactive hover states.",
+      "Portfolio Showcase: A showcase of case studies with live category-based client-side filtering.",
+      "Responsive Layout: Optimized for flawless presentation on mobile, tablet, and desktop screens."
+    ],
+    impact: [
+      "Establishes a highly polished web presence that builds credibility for high-end digital agency services.",
+      "Showcases advanced CSS shadow styling and modern aesthetic design implementation."
+    ],
+    links: {
+      repo: "https://github.com/abday-wong/ALPHECCI",
+      live: "https://alphecci.vercel.app/"
+    }
+  }
 };

@@ -70,6 +70,12 @@ export const PORTFOLIO_DATA = {
             title: "Web Portfolio ✨",
             category: "Web Application / Portfolio",
             description: "An interactive, premium portfolio website built using React, Vite, Tailwind CSS, GSAP, and featuring an AI terminal chat."
+        },
+        {
+            slug: "alphecci",
+            title: "Alphecci 🏛️",
+            category: "Web Application / Digital Product Studio",
+            description: "A premium digital product studio website specializing in high-fidelity user interfaces, custom software, and intelligent AI solutions, built with a warm-ivory neomorphic design system."
         }
     ],
     achievements: [

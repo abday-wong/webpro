@@ -23,6 +23,14 @@ export const PROJECT_META = [
     color: "bg-cyan-400",
     img: "/web_portfolio.png",
   },
+  {
+    id: 4,
+    slug: "alphecci",
+    title: "Alphecci",
+    category: "Neomorphic Product Studio",
+    color: "bg-amber-400",
+    img: "/alphecci.png",
+  },
 ];
 
 export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {
