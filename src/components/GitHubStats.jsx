@@ -14,7 +14,7 @@ const LEVEL_COLORS = {
     1: '#371a1a',   
     2: '#7f1d1d',
     3: '#b91c1c',
-    4: '#ef4444',   
+    4: '#e60012',   
 };
 
 const LOADING_COLOR = '#1a1a1a';
@@ -166,7 +166,7 @@ const GitHubStats = memo(function GitHubStats() {
                     viewport={{ once: true }}
                     className="flex items-center gap-4 mb-16 md:mb-20"
                 >
-                    <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-[#e60012] rounded-full animate-pulse" />
                     <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-white/40">
                         05. Source_Metrics
                     </span>
@@ -183,7 +183,7 @@ const GitHubStats = memo(function GitHubStats() {
                         className="text-3xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.98] sm:leading-[0.9] text-white"
                     >
                         GitHub <br />
-                        <span className="text-red-500">Activity.</span>
+                        <span className="text-[#e60012]">Activity.</span>
                     </Gsap.h2>
 
                     <Gsap.a
@@ -194,7 +194,7 @@ const GitHubStats = memo(function GitHubStats() {
                         href={GITHUB_PROFILE_URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-3 w-fit border border-red-600/30 text-red-500 px-6 py-3 hover:bg-red-600 hover:text-black transition-all font-mono text-sm font-bold uppercase tracking-[0.14em] md:tracking-[0.2em] group"
+                        className="flex items-center gap-3 w-fit border border-[#e60012]/30 text-[#e60012] px-6 py-3 hover:bg-[#e60012] hover:text-black transition-all font-mono text-sm font-bold uppercase tracking-[0.14em] md:tracking-[0.2em] group"
                     >
                         <Terminal size={16} />
                         Launch_Profile
@@ -215,12 +215,12 @@ const GitHubStats = memo(function GitHubStats() {
                     >
                         {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
-                            <div className="flex items-center justify-between text-white/40 group-hover:text-red-500 transition-colors">
+                            <div className="flex items-center justify-between text-white/40 group-hover:text-[#e60012] transition-colors">
                                 <Code size={20} />
                                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] md:tracking-[0.16em] font-bold">REPOS</span>
                             </div>
                             <div>
-                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-red-500 transition-colors">
+                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-[#e60012] transition-colors">
                                     {loading ? '-' : String(Math.max(25, userData?.public_repos ?? 0)).padStart(2, '0')}
                                 </p>
                             </div>
@@ -228,12 +228,12 @@ const GitHubStats = memo(function GitHubStats() {
 
                         {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
-                            <div className="flex items-center justify-between text-white/40 group-hover:text-red-500 transition-colors">
+                            <div className="flex items-center justify-between text-white/40 group-hover:text-[#e60012] transition-colors">
                                 <Terminal size={20} />
                                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] md:tracking-[0.16em] font-bold">TOTAL</span>
                             </div>
                             <div>
-                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-red-500 transition-colors">
+                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-[#e60012] transition-colors">
                                     {loading ? '...' : (totalContributions > 999 ? `${(totalContributions / 1000).toFixed(1)}k` : totalContributions)}
                                 </p>
                             </div>
@@ -241,12 +241,12 @@ const GitHubStats = memo(function GitHubStats() {
 
                         {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
-                            <div className="flex items-center justify-between text-white/40 group-hover:text-red-500 transition-colors">
+                            <div className="flex items-center justify-between text-white/40 group-hover:text-[#e60012] transition-colors">
                                 <Users size={20} />
                                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] md:tracking-[0.16em] font-bold">FLWRS</span>
                             </div>
                             <div>
-                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-red-500 transition-colors">
+                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-[#e60012] transition-colors">
                                     {loading ? '-' : String(userData?.followers ?? 0).padStart(2, '0')}
                                 </p>
                             </div>
@@ -254,12 +254,12 @@ const GitHubStats = memo(function GitHubStats() {
 
                         {}
                         <div className="bg-[#0A0A0A] p-6 lg:p-8 flex flex-col justify-between aspect-square group hover:bg-[#111111] transition-colors">
-                            <div className="flex items-center justify-between text-white/40 group-hover:text-red-500 transition-colors">
+                            <div className="flex items-center justify-between text-white/40 group-hover:text-[#e60012] transition-colors">
                                 <Calendar size={20} />
                                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] md:tracking-[0.16em] font-bold">EST.</span>
                             </div>
                             <div>
-                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-red-500 transition-colors">
+                                <p className="text-4xl lg:text-6xl text-white font-black tracking-tighter group-hover:text-[#e60012] transition-colors">
                                     {loading ? '-' : (userData?.created_at ? new Date(userData.created_at).getFullYear() : '----')}
                                 </p>
                             </div>
@@ -285,7 +285,7 @@ const GitHubStats = memo(function GitHubStats() {
                                 <span className="w-3 h-3 bg-[#1a2e05]" />
                                 <span className="w-3 h-3 bg-[#3f6212]" />
                                 <span className="w-3 h-3 bg-[#65a30d]" />
-                                <span className="w-3 h-3 bg-[#ef4444] mr-2" />
+                                <span className="w-3 h-3 bg-[#e60012] mr-2" />
                                 More
                             </div>
                         </div>
@@ -296,10 +296,10 @@ const GitHubStats = memo(function GitHubStats() {
 
                         <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center font-mono text-xs md:text-sm text-white/40">
                             <div>
-                                <span className="text-red-600 mr-2">$</span>
+                                <span className="text-[#e60012] mr-2">$</span>
                                 user_query --status
                             </div>
-                            <div className="uppercase tracking-[0.12em] md:tracking-[0.16em] text-red-500/80 animate-pulse">
+                            <div className="uppercase tracking-[0.12em] md:tracking-[0.16em] text-[#e60012]/80 animate-pulse">
                                 ONLINE
                             </div>
                         </div>

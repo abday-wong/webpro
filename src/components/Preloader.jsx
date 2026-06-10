@@ -57,86 +57,77 @@ const Preloader = ({ onComplete }) => {
 
     return (
         <div
-            className={`fixed inset-0 z-[9999] bg-black text-red-500 flex flex-col justify-between p-4 md:p-10 font-mono overflow-hidden transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isExiting ? '-translate-y-full' : 'translate-y-0'}`}
+            className={`fixed inset-0 z-[9999] bg-[#000000] text-white flex flex-col justify-between p-6 md:p-10 overflow-hidden transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isExiting ? '-translate-y-full' : 'translate-y-0'}`}
             style={{
                 willChange: 'transform',
                 backfaceVisibility: 'hidden',
                 WebkitBackfaceVisibility: 'hidden',
             }}
         >
-            {}
-            <div className="flex justify-between items-start uppercase text-xs md:text-sm tracking-widest opacity-50">
-                <span>Abday Hafidz Portfolio</span>
-                <span>©2026</span>
+            {/* Ambient Halftone Pattern */}
+            <div className="absolute inset-0 z-0 p5-halftone-bg opacity-30 pointer-events-none" />
+
+            {/* Persona 5 Diagonal Stripe Slashes */}
+            <div className="absolute top-1/4 -left-10 w-[120vw] h-12 p5-slash-stripe rotate-[-6deg] z-0 opacity-80" />
+            <div className="absolute top-[60%] -right-10 w-[120vw] h-6 bg-white rotate-[4deg] z-0 opacity-60" />
+            <div className="absolute bottom-1/4 -left-10 w-[120vw] h-16 p5-slash-stripe rotate-[-3deg] z-0 opacity-90" />
+
+            {/* Header info */}
+            <div className="relative z-10 flex justify-between items-start uppercase font-mono text-xs md:text-sm tracking-widest">
+                <span className="p5-title-block text-xs font-black">PHANTOM THIEF SYSTEM</span>
+                <span className="text-white/60 bg-black/60 px-2 py-0.5 border border-white/20 font-bold">©2026 ATLUS_INSP</span>
             </div>
 
-            {}
-            <div className="flex flex-col items-center justify-center gap-6 w-full">
-                <Gsap.p
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-xl md:text-3xl font-bold tracking-widest uppercase text-red-500"
-                >
-                    &gt; {words[index]}_
-                </Gsap.p>
+            {/* Center Loading Card */}
+            <div className="relative z-10 flex flex-col items-center justify-center gap-4 w-full my-auto">
+                <div className="flex flex-wrap justify-center gap-1.5 md:gap-3">
+                    {"ABDAY HAFIDZ".split("").map((char, i) => (
+                        <div
+                            key={i}
+                            className={`px-3 py-1.5 text-xl md:text-5xl font-black rounded-sm border-2 border-white select-none transition-all duration-300 ${
+                                char === " " 
+                                ? "bg-transparent border-transparent w-4 md:w-8" 
+                                : i % 2 === 0 
+                                ? "bg-[#e60012] text-white p5-shadow-black rotate-[3deg] scale-105" 
+                                : "bg-black text-white p5-shadow-red rotate-[-4deg]"
+                            }`}
+                        >
+                            {char}
+                        </div>
+                    ))}
+                </div>
 
-                {}
-                <div className="text-red-500 font-mono text-[10px] sm:text-xs md:text-sm leading-[1.1] md:leading-none whitespace-pre text-center md:text-left select-none overflow-hidden drop-shadow-[0_0_8px_rgba(239, 68, 68,0.5)]">
-                    {(() => {
-                        const width = typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 40;
-                        const filled = Math.floor((progress / 100) * width);
-                        let ascii = "";
-                        const fillChars = ['░', '▒', '▓', '█'];
-
-                        ascii += "╔" + "═".repeat(width) + "╗\n";
-                        for (let r = 0; r < 5; r++) {
-                            let row = "║";
-                            for (let c = 0; c < width; c++) {
-                                if (c < filled) {
-                                    if (c === filled - 1 && progress < 100) {
-                                        
-                                        row += fillChars[tick % 4];
-                                    } else {
-                                        row += '█';
-                                    }
-                                } else {
-                                    row += (tick % 2 === 0 && Math.random() > 0.9) ? '.' : ' ';
-                                }
-                            }
-                            row += "║\n";
-                            ascii += row;
-                        }
-                        ascii += "╚" + "═".repeat(width) + "╝\n";
-
-                        
-                        ascii += `\n>> SYS.MEM.${progress === 100 ? 'READY' : 'ALLOCATING'}  [${Math.round(progress).toString().padStart(3, '0')}%]`;
-                        if (progress === 100) {
-                            ascii += `  [OK]\n>> BOOT SEQUENCE COMPLETE.`;
-                        } else {
-                            ascii += `  [${fillChars[tick % 4]}]\n>> 0x${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0').toUpperCase()} ...`;
-                        }
-                        return ascii;
-                    })()}
+                {/* Progress bar in P5 block style */}
+                <div className="w-full max-w-md bg-neutral-900 border-2 border-white/20 p-1 mt-6 relative p5-skew-x">
+                    <div 
+                        className="h-4 bg-[#e60012] transition-all duration-200" 
+                        style={{ width: `${progress}%` }} 
+                    />
+                    <div className="absolute -top-6 right-2 bg-black border border-white text-white font-mono text-xs font-bold px-2 py-0.5 p5-skew-x">
+                        PROGRESS: {Math.round(progress)}%
+                    </div>
                 </div>
             </div>
 
-            {}
-            <div className="flex justify-between items-end uppercase text-xs md:text-sm tracking-widest opacity-50 w-full">
-                <span>System Status: {progress === 100 ? 'ONLINE' : 'BOOTING'}</span>
+            {/* Footer and P5 Loading Mascot/Star */}
+            <div className="relative z-10 flex justify-between items-end w-full">
+                <div className="flex flex-col gap-1 font-mono text-xs md:text-sm tracking-wider text-left">
+                    <div className="text-white/40">SYSTEM STATUS:</div>
+                    <div className="font-black text-[#e60012] bg-white px-2 py-0.5 inline-block p5-skew-x border border-black">
+                        {progress === 100 ? 'STEAL YOUR HEART' : 'PREPARING CALLING CARD...'}
+                    </div>
+                </div>
+
+                {/* Persona 5 Royal Loading Indicator: spinning stars and sliding loading text */}
+                <div className="flex items-center gap-3">
+                    <span className="font-display font-black text-lg md:text-2xl tracking-tighter uppercase skew-x-[-12deg] bg-white text-black border-2 border-[#e60012] px-3 py-1 shadow-[3px_3px_0px_#000]">
+                        LOADING
+                    </span>
+                    <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-[#e60012] border-2 border-white rounded-full p5-star-animated p5-shadow-black">
+                        <span className="text-white text-xl md:text-2xl font-black select-none">★</span>
+                    </div>
+                </div>
             </div>
-
-            {}
-            <div className="absolute inset-0 z-[-1] opacity-20 pointer-events-none"
-                style={{
-                    backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
-                    backgroundSize: '40px 40px'
-                }}
-            />
-
-            {}
-            <div className="absolute inset-0 z-[10] pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px]" />
         </div>
     );
 };

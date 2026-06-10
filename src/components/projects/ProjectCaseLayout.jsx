@@ -28,7 +28,7 @@ export default function ProjectCaseLayout({
   mode,
 }) {
   return (
-    <div className={`bg-[#030303] text-white font-sans selection:bg-red-600 selection:text-white overflow-x-hidden ${mode === 'page' ? 'min-h-screen' : 'h-full flex flex-col'}`}>
+    <div className={`bg-[#030303] text-white font-sans selection:bg-[#e60012] selection:text-white overflow-x-hidden ${mode === 'page' ? 'min-h-screen' : 'h-full flex flex-col'}`}>
 
       {}
       <div className="sticky top-0 z-40 bg-[#030303]/90 backdrop-blur-md border-b border-white/10">
@@ -88,7 +88,7 @@ export default function ProjectCaseLayout({
           >
             {project.links?.live && (
               <a href={project.links.live} target="_blank" rel="noreferrer"
-                className="bg-red-600 text-white px-8 py-3.5 font-bold uppercase text-xs tracking-wider hover:bg-white hover:text-black transition-all duration-300 rounded-[2px] flex items-center gap-2 shadow-sm">
+                className="bg-[#e60012] text-white px-8 py-3.5 font-bold uppercase text-xs tracking-wider hover:bg-white hover:text-black transition-all duration-300 rounded-[2px] flex items-center gap-2 shadow-sm">
                 <Globe size={16} /> View Live
               </a>
             )}

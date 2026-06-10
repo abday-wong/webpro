@@ -51,65 +51,55 @@ const AchievementCard = ({ achievement, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.12 + index * 0.1, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -2 }}
-      className="group relative cursor-pointer rounded-[8px] overflow-hidden border border-white/10 bg-neutral-900/40 shadow-[0_4px_14px_rgba(255,255,255,0.01)] hover:border-white/20/14 hover:shadow-[0_10px_28px_rgba(255,255,255,0.02)] transition-all duration-300"
+      className="group relative cursor-pointer border-2 border-white bg-black p-6 md:p-7 p5-shadow-red transition-all duration-300 hover:scale-[1.01] hover:p5-shadow-white overflow-hidden"
     >
-      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-red-500/[0.16] blur-3xl opacity-35 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-200/[0.08] via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute inset-0 border border-white/5 rounded-[8px] pointer-events-none" />
+      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#e60012]/[0.12] blur-3xl opacity-35 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none" />
 
-      <div className="relative z-10 p-6 md:p-7">
-        {}
-        <div className="flex items-center justify-between mb-6">
+      <div className="relative z-10">
+        {/* Top meta row */}
+        <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2">
-            {}
-            <span className="font-mono text-[8.5px] uppercase tracking-[0.18em] text-white/45 border border-white/10 px-2.5 py-1 rounded-[2px] bg-neutral-800/90 shadow-[0_1px_4px_rgba(255,255,255,0.01)]">
+            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white bg-[#e60012] border border-black px-2.5 py-0.5 p5-skew-x font-black">
               {achievement.category}
             </span>
-            {}
             {achievement.rank && (
-              <span className="font-mono text-[8.5px] font-bold uppercase tracking-[0.18em] bg-neutral-900 text-white px-2.5 py-1 rounded-[2px]">
+              <span className="font-mono text-[9px] font-black uppercase tracking-[0.18em] bg-white text-black border border-black px-2.5 py-0.5 p5-skew-x">
                 {achievement.rank}
               </span>
             )}
           </div>
-          {}
-          <span className="font-mono text-[11px] font-bold text-white/30 tabular-nums">{achievement.year}</span>
+          <span className="font-mono text-[11px] font-black text-[#e60012] bg-white px-2 py-0.5 border border-black p5-skew-x tabular-nums">{achievement.year}</span>
         </div>
 
-        {}
+        {/* Card details */}
         <div className="flex items-start justify-between gap-5">
           <div className="flex-1">
-            {}
-            <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-mono text-[10px] text-white/22 font-bold tabular-nums select-none border border-white/10 px-1.5 py-0.5 rounded-[2px] leading-none">
+            <div className="flex items-baseline gap-3 mb-2">
+              <span className="font-mono text-[10px] bg-white text-black border-2 border-black font-black px-1.5 py-0.5 p5-skew-x leading-none select-none">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="font-display font-bold text-[22px] md:text-[26px] tracking-[-0.022em] text-white leading-[0.98]">
+              <h3 className="font-display font-black text-xl md:text-2xl tracking-tight text-white leading-none">
                 {achievement.title}
               </h3>
             </div>
 
-            {}
-            <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-white/40 ml-8 mb-4">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-white/50 ml-8 mb-4">
               {achievement.event}
             </p>
 
-            {}
             {achievement.description && (
-              <p className="text-[13px] text-white/58 font-light leading-[1.72] ml-8 max-w-[470px]">
+              <p className="text-[13px] text-white/70 font-light leading-[1.72] ml-8 max-w-[470px]">
                 {achievement.description}
               </p>
             )}
           </div>
 
-          {}
-          <div className="shrink-0 w-11 h-11 rounded-full border border-white/10 bg-neutral-800/95 shadow-[0_2px_8px_rgba(255,255,255,0.02)] flex items-center justify-center group-hover:border-white/20/20 transition-all duration-300">
-            <Icon size={16} className="text-white/35 group-hover:text-white/55 transition-colors duration-300" />
+          <div className="shrink-0 w-11 h-11 border-2 border-white bg-black text-[#e60012] group-hover:bg-[#e60012] group-hover:text-black p5-shadow-black transition-all duration-300 flex items-center justify-center">
+            <Icon size={16} className="transition-transform duration-300 group-hover:rotate-45" />
           </div>
         </div>
 
-        {}
+        {/* Action Link Footer */}
         <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
             Click to view repository
@@ -133,7 +123,7 @@ const AboutSection = memo(function AboutSection() {
 
       {}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute right-0 top-1/4 w-[520px] h-[520px] bg-red-500/[0.07] rounded-full blur-[110px]" />
+        <div className="absolute right-0 top-1/4 w-[520px] h-[520px] bg-[#e60012]/[0.07] rounded-full blur-[110px]" />
         <div className="absolute -left-24 bottom-0 w-[380px] h-[380px] bg-neutral-900/[0.03] rounded-full blur-[100px]" />
       </div>
 
@@ -166,13 +156,13 @@ const AboutSection = memo(function AboutSection() {
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:sticky lg:top-28"
           >
-            {}
-            <div className="relative">
-              <div className="absolute -top-2.5 -left-2.5 w-full h-full border border-red-600/25 rounded-[4px] pointer-events-none" />
+            <div className="relative p-2">
+              {/* Backing Red block for P5 high-contrast effect */}
+              <div className="absolute -inset-1 bg-[#e60012] skew-y-[-2deg] pointer-events-none z-0" />
+              <div className="absolute inset-0 bg-white skew-x-[-3deg] pointer-events-none z-0 shadow-lg" />
 
-              <div className="relative aspect-[4/5] w-full rounded-[4px] overflow-hidden border border-white/10 bg-neutral-900/[0.04] group">
-                {}
-                <div className="absolute inset-0 bg-neutral-900/[0.12] group-hover:bg-transparent transition-colors duration-700 z-10 mix-blend-multiply pointer-events-none" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden border-4 border-black bg-black group z-10">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none" />
 
                 <picture>
                   <source srcSet="/profile.webp" type="image/webp" />
@@ -181,48 +171,42 @@ const AboutSection = memo(function AboutSection() {
                     alt={PORTFOLIO_DATA.profile.name}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover object-top grayscale-[25%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-[1.05] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   />
                 </picture>
 
-                {}
-                <div className="absolute bottom-0 left-0 right-0 px-5 pt-10 pb-4 bg-gradient-to-t from-black/65 via-black/30 to-transparent z-20">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/50 mb-0.5">Name</p>
-                  <p className="text-white font-bold text-[15px] tracking-wide leading-snug">{PORTFOLIO_DATA.profile.name}</p>
+                {/* Stylized P5 name label overlay */}
+                <div className="absolute bottom-2 left-2 bg-black border-2 border-white text-white p-2.5 p5-skew-both p5-shadow-red z-20">
+                  <p className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#e60012] font-black mb-0.5">TARGET</p>
+                  <p className="font-display font-black text-sm tracking-tight leading-none uppercase">{PORTFOLIO_DATA.profile.name}</p>
                 </div>
-
-                {}
-                <span className="absolute top-3.5 left-3.5 w-5 h-px bg-neutral-900/65 z-20" />
-                <span className="absolute top-3.5 left-3.5 w-px h-5 bg-neutral-900/65 z-20" />
-                <span className="absolute bottom-3.5 right-3.5 w-5 h-px bg-neutral-900/65 z-20" />
-                <span className="absolute bottom-3.5 right-3.5 w-px h-5 bg-neutral-900/65 z-20" />
               </div>
             </div>
 
-            {}
-            <div className="mt-4 grid grid-cols-2 gap-2.5">
-              <div className="bg-neutral-900 border border-white/10 rounded-[3px] py-3.5 px-4">
-                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/40 mb-1.5">Status</p>
+            {/* P5 Stylized Info Badges */}
+            <div className="mt-6 grid grid-cols-2 gap-3 relative z-10">
+              <div className="bg-black border-2 border-white p5-shadow-red p5-skew-both py-3 px-4 transition-all hover:bg-[#e60012] group/badge">
+                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/50 group-hover/badge:text-black font-black mb-1">Status</p>
                 <div className="flex items-center gap-2">
-                  <span className="w-[6px] h-[6px] rounded-full bg-red-700 shrink-0" />
-                  <span className="text-[13px] font-bold text-white">Available</span>
+                  <span className="w-2 h-2 rounded-full bg-[#e60012] group-hover/badge:bg-white animate-pulse shrink-0" />
+                  <span className="text-[13px] font-black text-white group-hover/badge:text-black uppercase tracking-tight">Available</span>
                 </div>
               </div>
-              <div className="bg-neutral-900 border border-white/10 rounded-[3px] py-3.5 px-4">
-                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/40 mb-1.5">Location</p>
+              <div className="bg-black border-2 border-white p5-shadow-red p5-skew-both py-3 px-4 transition-all hover:bg-[#e60012] group/badge">
+                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/50 group-hover/badge:text-black font-black mb-1">Location</p>
                 <div className="flex items-center gap-1.5">
-                  <MapPin size={11} className="text-white/38 shrink-0" />
-                  <span className="text-[13px] font-bold text-white">{PORTFOLIO_DATA.profile.location}</span>
+                  <MapPin size={12} className="text-[#e60012] group-hover/badge:text-black shrink-0" />
+                  <span className="text-[13px] font-black text-white group-hover/badge:text-black uppercase tracking-tight">{PORTFOLIO_DATA.profile.location}</span>
                 </div>
               </div>
             </div>
 
-            {}
-            <div className="mt-2.5 grid grid-cols-3 gap-2.5">
+            {/* P5 Stat Boxes */}
+            <div className="mt-4 grid grid-cols-3 gap-3 relative z-10">
               {STATS.map((stat, i) => (
-                <div key={i} className="bg-neutral-900 border border-white/10 rounded-[3px] py-4 px-3 text-center">
-                  <p className="font-black text-[22px] text-white leading-none tabular-nums">{stat.value}</p>
-                  <p className="font-mono text-[8px] uppercase tracking-[0.08em] text-white/40 mt-1.5 leading-tight whitespace-pre-line">{stat.label}</p>
+                <div key={i} className="bg-black border-2 border-white p5-shadow-black p5-skew-both py-4 px-3 text-center transition-all hover:bg-[#e60012] hover:p5-shadow-white group/stat">
+                  <p className="font-display font-black text-2xl text-white group-hover/stat:text-black leading-none">{stat.value}</p>
+                  <p className="font-mono text-[8px] uppercase tracking-[0.08em] text-white/50 group-hover/stat:text-black font-black mt-2 leading-tight whitespace-pre-line">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -297,11 +281,11 @@ const AboutSection = memo(function AboutSection() {
               <p className="font-mono text-[9.5px] md:text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">
                 Core Focus & Supporting Skills
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {CAPABILITIES.map((cap, i) => (
                   <span
                     key={i}
-                    className="font-mono text-[10px] md:text-[10.5px] uppercase tracking-[0.12em] font-bold text-white/75 border border-white/10 px-3.5 py-[9px] rounded-[3px] hover:border-white/20 hover:text-white hover:bg-neutral-900 hover:text-white transition-all duration-200 cursor-default"
+                    className="font-mono text-[10px] md:text-[10.5px] uppercase tracking-[0.12em] font-black text-white border-2 border-white bg-black px-3.5 py-[9px] p5-skew-x hover:bg-[#e60012] hover:p5-shadow-white transition-all duration-200 cursor-default shadow-[3px_3px_0px_#e60012]"
                   >
                     {cap}
                   </span>

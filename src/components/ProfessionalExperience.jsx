@@ -58,7 +58,7 @@ const ExperienceItem = ({ experience, isExpanded, onToggle, index }) => {
                   {experience.period}
                 </span>
                 {isCurrent && (
-                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] bg-red-600 text-white px-2.5 py-1 rounded-[2px]">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] bg-[#e60012] text-white px-2.5 py-1 rounded-[2px]">
                     Active Now
                   </span>
                 )}

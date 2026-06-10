@@ -477,7 +477,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                     <div className="bg-[#1a1a1a] px-3 py-2 flex justify-between items-center border-b border-neutral-800 select-none">
                         <div className="flex items-center gap-2">
                             <div className="flex gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div className="w-3 h-3 rounded-full bg-[#e60012]/80"></div>
                                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                             </div>
@@ -512,13 +512,13 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                         {messages.map((msg, idx) => (
                             <div key={idx} className="flex flex-col gap-1 break-words group/msg">
                                 {msg.type === 'user' ? (
-                                    <div className="flex gap-2 text-red-500">
+                                    <div className="flex gap-2 text-[#e60012]">
                                         <span className="shrink-0 select-none">{'>'}</span>
                                         <span>{msg.text}</span>
                                     </div>
                                 ) : (
                                     <div className={`flex gap-2 relative ${msg.isError ? 'text-red-400' : 'text-neutral-300'}`}>
-                                        <span className={`shrink-0 select-none ${msg.isError ? 'text-red-400' : 'text-red-500'}`}>●</span>
+                                        <span className={`shrink-0 select-none ${msg.isError ? 'text-red-400' : 'text-[#e60012]'}`}>●</span>
                                         <div className="flex-1 min-w-0">
                                             {msg.isTerminal ? (
                                                 <pre className="whitespace-pre-wrap text-[12px] text-neutral-300 font-mono leading-relaxed">{msg.text}</pre>
@@ -553,7 +553,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
 
                         {isTyping && (
                             <div className="flex gap-2 text-neutral-500">
-                                <span className="shrink-0 text-red-500 select-none">●</span>
+                                <span className="shrink-0 text-[#e60012] select-none">●</span>
                                 <span className="animate-pulse">_</span>
                             </div>
                         )}
@@ -562,15 +562,15 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
 
                     {}
                     <div className="px-3 py-2 border-t border-neutral-800 bg-[#0c0c0c] flex gap-2 overflow-x-auto no-scrollbar">
-                        <button onClick={() => quickAction("Tell me about your tech stack")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-red-600 hover:text-red-500 transition-colors whitespace-nowrap" aria-label="Ask about tech stack">./stack</button>
-                        <button onClick={() => quickAction("Show me your projects")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-red-600 hover:text-red-500 transition-colors whitespace-nowrap" aria-label="Ask about projects">./projects</button>
-                        <button onClick={() => quickAction("Tell me about your experience")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-red-600 hover:text-red-500 transition-colors whitespace-nowrap" aria-label="Ask about experience">./experience</button>
-                        <button onClick={() => quickAction("How can I contact you?")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-red-600 hover:text-red-500 transition-colors whitespace-nowrap" aria-label="Ask about contact">./contact</button>
+                        <button onClick={() => quickAction("Tell me about your tech stack")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-[#e60012] hover:text-[#e60012] transition-colors whitespace-nowrap" aria-label="Ask about tech stack">./stack</button>
+                        <button onClick={() => quickAction("Show me your projects")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-[#e60012] hover:text-[#e60012] transition-colors whitespace-nowrap" aria-label="Ask about projects">./projects</button>
+                        <button onClick={() => quickAction("Tell me about your experience")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-[#e60012] hover:text-[#e60012] transition-colors whitespace-nowrap" aria-label="Ask about experience">./experience</button>
+                        <button onClick={() => quickAction("How can I contact you?")} className="text-[10px] text-neutral-400 border border-neutral-700 px-2 py-0.5 rounded hover:border-[#e60012] hover:text-[#e60012] transition-colors whitespace-nowrap" aria-label="Ask about contact">./contact</button>
                     </div>
 
                     {}
                     <form onSubmit={handleSendMessage} className="border-t border-neutral-800 bg-[#0c0c0c] p-2 flex gap-2 items-center">
-                        <span className="text-red-500 pl-2 select-none">{'>'}</span>
+                        <span className="text-[#e60012] pl-2 select-none">{'>'}</span>
                         <input
                             ref={inputRef}
                             type="text"
@@ -578,7 +578,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={handleKeyDown}
                             placeholder=""
-                            className="flex-1 bg-transparent border-none outline-none text-red-500 text-base font-mono caret-cyan-400"
+                            className="flex-1 bg-transparent border-none outline-none text-[#e60012] text-base font-mono caret-cyan-400"
                             disabled={isTyping || isStreaming}
                             autoFocus
                             aria-label="Terminal input"
@@ -591,7 +591,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
             {}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="group flex items-center justify-center w-11 h-11 md:w-14 md:h-14 bg-black border border-neutral-800 text-red-500 shadow-lg hover:bg-neutral-900 transition-all rounded-full"
+                className="group flex items-center justify-center w-11 h-11 md:w-14 md:h-14 bg-black border border-neutral-800 text-[#e60012] shadow-lg hover:bg-neutral-900 transition-all rounded-full"
                 aria-label={isOpen ? "Close terminal" : "Open terminal (Ctrl+K)"}
             >
                 {isOpen ? <X size={20} /> : <Terminal size={20} className="group-hover:scale-110 transition-transform" />}

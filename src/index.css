@@ -109,13 +109,13 @@ body {
 
 /* Custom Text Selection Color */
 ::selection {
-  background-color: #ef4444;
+  background-color: #e60012;
   /* cyan-400 */
   color: #000000;
 }
 
 ::-moz-selection {
-  background-color: #ef4444;
+  background-color: #e60012;
   /* cyan-400 */
   color: #000000;
 }
@@ -279,3 +279,129 @@ html.lenis body {
     scroll-behavior: auto;
   }
 }
+
+/* ============================================
+   Persona 5 Royal Inspired Styling Utilities
+   ============================================ */
+
+/* Atlus Persona 5 Red variable override */
+:root {
+  --p5-red: #e60012;
+  --p5-black: #000000;
+  --p5-white: #ffffff;
+}
+
+/* Halftone dot pattern background */
+.p5-halftone-bg {
+  background-image: radial-gradient(rgba(230, 0, 18, 0.15) 15%, transparent 16%);
+  background-size: 16px 16px;
+  background-position: 0 0;
+}
+
+.p5-halftone-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 12%, transparent 13%);
+  background-size: 12px 12px;
+}
+
+/* Skewed panels and blocks */
+.p5-skew-x {
+  transform: skewX(-6deg);
+}
+
+.p5-skew-y {
+  transform: skewY(-2deg);
+}
+
+.p5-skew-both {
+  transform: skewX(-6deg) skewY(-1.5deg);
+}
+
+/* High-contrast solid shadows */
+.p5-shadow-red {
+  box-shadow: 6px 6px 0px 0px var(--p5-red);
+}
+
+.p5-shadow-white {
+  box-shadow: 6px 6px 0px 0px var(--p5-white);
+}
+
+.p5-shadow-black {
+  box-shadow: 6px 6px 0px 0px var(--p5-black);
+}
+
+.p5-shadow-double-red {
+  box-shadow: 4px 4px 0px 0px var(--p5-black), 8px 8px 0px 0px var(--p5-red);
+}
+
+.p5-shadow-double-white {
+  box-shadow: 4px 4px 0px 0px var(--p5-black), 8px 8px 0px 0px var(--p5-white);
+}
+
+/* Star spinning keyframe */
+@keyframes p5-star-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.p5-star-animated {
+  animation: p5-star-spin 6s linear infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Rough borders and cutouts */
+.p5-border-rough {
+  border: 3px solid var(--p5-white);
+  outline: 3px solid var(--p5-red);
+  outline-offset: -6px;
+}
+
+.p5-border-red {
+  border: 3px solid var(--p5-red);
+}
+
+/* Title block: stark white letters on black block, red shadow */
+.p5-title-block {
+  background-color: var(--p5-black);
+  color: var(--p5-white);
+  padding: 0.25em 0.75em;
+  display: inline-block;
+  transform: skewX(-8deg);
+  border: 2px solid var(--p5-white);
+  box-shadow: 4px 4px 0px var(--p5-red);
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.p5-title-block-red {
+  background-color: var(--p5-red);
+  color: var(--p5-white);
+  padding: 0.25em 0.75em;
+  display: inline-block;
+  transform: skewX(-8deg);
+  border: 2px solid var(--p5-black);
+  box-shadow: 4px 4px 0px var(--p5-white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Custom P5 Loading Screen Slashes */
+.p5-slash-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--p5-red),
+    var(--p5-red) 15px,
+    var(--p5-black) 15px,
+    var(--p5-black) 30px
+  );
+}
+
