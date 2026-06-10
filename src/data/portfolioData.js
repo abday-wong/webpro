@@ -1,8 +1,8 @@
 export const PORTFOLIO_DATA = {
     profile: {
         name: "Muhammad Abday Abdul Hafidz",
-        role: "Computer Science Engineering Student & Flutter Developer",
-        bio: "I'm a Computer Science Engineering student and Flutter developer passionate about crafting beautiful mobile experiences. I specialize in modern UI paradigms—including Neumorphism, Glassmorphism, and Neo-Brutalism—to build apps that are both functional and visually striking. Currently based in West Java, Indonesia, I love turning complex problems into elegant solutions.",
+        role: "Software Engineer & Computer Science Engineering Student",
+        bio: "I'm a Computer Science Engineering student and software engineer passionate about crafting beautiful web and mobile experiences. I specialize in modern UI paradigms—including Neumorphism, Glassmorphism, and Neo-Brutalism—to build apps that are both functional and visually striking. Currently based in West Java, Indonesia, I love turning complex problems into elegant solutions.",
         location: "West Java, Indonesia",
         email: "abday.hafidz23@gmail.com",
         socials: {
@@ -41,6 +41,9 @@ export const PORTFOLIO_DATA = {
     ],
     techStack: [
         { name: "Flutter", category: "Framework" },
+        { name: "React", category: "Framework" },
+        { name: "Next.js", category: "Framework" },
+        { name: "Laravel", category: "Framework" },
         { name: "Dart", category: "Language" },
         { name: "HTML", category: "Frontend" },
         { name: "CSS", category: "Frontend" },
@@ -72,7 +75,7 @@ export const PORTFOLIO_DATA = {
             project: "YokNabung",
             description: "Developed and shipped a complete gamified savings tracker. Engineered features like daily local reminders, interactive charts, persistent state, and custom milestone tiers.",
             team: "Muhammad Abday Abdul Hafidz (Abday Hafidz)",
-            track: "Flutter Development",
+            track: "Software Engineering",
             techStack: ["Flutter", "Dart", "Provider", "SharedPreferences", "fl_chart", "Local Notifications"],
             links: {
                 github: "https://github.com/abday-wong/yoknabung"

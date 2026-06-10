@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 const skills = [
-  'Flutter Development',
+  'Full-Stack Development',
   'Mobile Applications',
   'Web Engineering',
   'Frontend Development',

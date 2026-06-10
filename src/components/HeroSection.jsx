@@ -257,10 +257,10 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           className="flex flex-col items-center gap-2 mt-0"
         >
           <h2 className="text-[clamp(1.35rem,4.2vw,2.25rem)] font-bold text-white/95 tracking-tight flex items-center justify-center flex-wrap gap-2 px-2">
-            Crafting <span className="bg-[#e60012]/30 px-2 rounded-md ring-1 ring-cyan-500/20">Beautiful</span> Mobile Experiences<span className="text-[#e60012] font-extrabold -ml-1">.</span>
+            Crafting <span className="bg-[#e60012]/30 px-2 rounded-md ring-1 ring-[#e60012]/20">Beautiful</span> Digital Experiences<span className="text-[#e60012] font-extrabold -ml-1">.</span>
           </h2>
           <p className="font-sans text-base text-white/60 max-w-xl leading-7 mt-2 px-4">
-            Flutter Developer & Computer Science Student specializing in interactive mobile applications.
+            Software Engineer & Computer Science Student specializing in full-stack web and mobile applications.
           </p>
         </Gsap.div>
 
