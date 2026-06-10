@@ -60,18 +60,6 @@ export const PORTFOLIO_DATA = {
             description: "A Neo-Brutalist savings tracker app built with Flutter. Features goal tracking, milestone roadmaps, streak system, and XP gamification."
         },
         {
-            slug: "project-alpha",
-            title: "Project Alpha 🚀",
-            category: "Mobile Experience (Coming Soon)",
-            description: "A brand new mobile application currently in development. Bringing fresh UI/UX concepts to everyday utility."
-        },
-        {
-            slug: "web-portfolio",
-            title: "Web Portfolio ✨",
-            category: "Web Application / Portfolio",
-            description: "An interactive, premium portfolio website built using React, Vite, Tailwind CSS, GSAP, and featuring an AI terminal chat."
-        },
-        {
             slug: "alphecci",
             title: "Alphecci 🏛️",
             category: "Web Application / Digital Product Studio",

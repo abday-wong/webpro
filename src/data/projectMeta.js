@@ -9,22 +9,6 @@ export const PROJECT_META = [
   },
   {
     id: 2,
-    slug: "project-alpha",
-    title: "Project Alpha",
-    category: "Mobile Experience (Coming Soon)",
-    color: "bg-cyan-400",
-    img: "/project_alpha.png",
-  },
-  {
-    id: 3,
-    slug: "web-portfolio",
-    title: "Web Portfolio",
-    category: "Interactive React Portfolio",
-    color: "bg-cyan-400",
-    img: "/web_portfolio.png",
-  },
-  {
-    id: 4,
     slug: "alphecci",
     title: "Alphecci",
     category: "Neomorphic Product Studio",

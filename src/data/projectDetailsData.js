@@ -37,53 +37,6 @@ export const PROJECT_DETAILS_DATA = {
       repo: "https://github.com/abday-wong/yoknabung",
     },
   },
-  "project-alpha": {
-    title: "Project Alpha 🚀",
-    category: "Mobile Experience (Coming Soon)",
-    tagline:
-      "A brand new mobile application bringing next-generation micro-interactions and interactive widgets to everyday utilities.",
-    year: "2026",
-    stack: ["Flutter", "Dart", "Provider", "Figma"],
-    features: [
-      "Fluid micro-animations built from the ground up for a tactile mobile feel.",
-      "Highly customizable dashboard layouts with reorderable widgets.",
-      "Local storage synchronization and offline-first usage model."
-    ],
-    impact: [
-      "Explores new UI layout methodologies on mobile devices.",
-      "Aims to optimize small utility tools for maximum user efficiency."
-    ],
-    links: {},
-  },
-  "web-portfolio": {
-    title: "Web Portfolio ✨",
-    category: "Interactive React Portfolio",
-    tagline:
-      "You're looking at it right now! A premium personal profile website built using React, Vite, and Tailwind CSS, featuring an AI terminal assistant.",
-    year: "2025",
-    stack: [
-      "React 19",
-      "Vite",
-      "Tailwind CSS",
-      "GSAP + ScrollTrigger",
-      "Lenis (Smooth Scroll)",
-      "React Router"
-    ],
-    features: [
-      "Premium animations: Driven by GSAP and ScrollTrigger for high-fidelity element entry transitions.",
-      "AI Terminal Chat: Interactive developer terminal shell offering command navigation (help, ls, cat <slug>) and Cerebras LLM chat.",
-      "Preloader experience: Customized preloader presenting profile names and animations before rendering content.",
-      "GitHub Integration: Displays active contributions and coding statistics dynamically.",
-      "Fully Responsive: Mapped layout grid for desktop, tablet, and mobile screens."
-    ],
-    impact: [
-      "Serves as an interactive hub for all project work, experiences, and technical skills.",
-      "Engages tech-focused visitors by offering a command-line interface directly on the portfolio."
-    ],
-    links: {
-      repo: "https://github.com/abday-wong/abday-hafidz",
-    },
-  },
   alphecci: {
     title: "Alphecci 🏛️",
     category: "Digital Product Studio",
