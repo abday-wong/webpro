@@ -1,21 +1,21 @@
-# Abday Hafidz — Developer Portfolio (Persona 5 Royal Edition) 🌟
+# Abday Hafidz — Developer Portfolio (Persona 5 Royal Edition)
 
-Developer portfolio interaktif yang sepenuhnya di-rebrand dengan estetika visual game **Persona 5 Royal**. Dilengkapi dengan loading animation "Calling Card" khas Atlus, halftone grid, skew/slanted blocks, high-contrast Atlus Acid Red (`#e60012`), and an interactive AI terminal chat.
+Developer portfolio interaktif yang di-rebrand dengan estetika visual game Persona 5 Royal. Mengintegrasikan loading animation "Calling Card" khas Atlus, halftone grid, skew/slanted blocks, warna Atlus Acid Red (`#e60012`), serta interaktivitas terminal chat berbasis AI.
 
 ---
 
-## 🎨 Persona 5 Royal Aesthetics & Features
+## Fitur dan Estetika Visual Persona 5 Royal
 
 - **Preloader Calling Card:** Animasi diagonal slash loading bar, skewed name blocks, dan dynamic loading star.
-- **Theme Color Palette:** Kombinasi kontras tinggi antara Hitam, Putih, dan **Atlus Acid Red (`#e60012`)**.
-- **Slanted Layouts:** Penggunaan `.p5-skew-x`, `.p5-skew-y`, dan `.p5-skew-both` untuk memberikan layout visual asimetris yang dinamis khas Atlus UI.
-- **Halftone Patterns:** Efek overlay dot pattern (`.p5-halftone-bg` & `.p5-halftone-dark`) untuk visual background yang retro-modern.
+- **Palette Warna:** Kombinasi kontras tinggi antara Hitam, Putih, dan Atlus Acid Red (`#e60012`).
+- **Slanted Layouts:** Implementasi class `.p5-skew-x`, `.p5-skew-y`, dan `.p5-skew-both` untuk memberikan layout visual asimetris yang dinamis khas Atlus UI.
+- **Halftone Patterns:** Efek overlay dot pattern (`.p5-halftone-bg` dan `.p5-halftone-dark`) untuk visual latar belakang retro-modern.
 - **AI Terminal Chat Widget:** Chat widget berbentuk command-line terminal yang mendukung command lokal (`help`, `ls`, `cat <slug>`, `history`, `clear`) dan integrasi AI (Cerebras LLaMA).
-- **GSAP & ScrollTrigger Animations:** Transisi scroll yang mulus, didukung oleh smooth scrolling dari **Lenis**.
+- **GSAP & ScrollTrigger Animations:** Transisi scroll dan animasi elemen interaktif yang didukung oleh smooth scrolling dari Lenis.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** React 19 + Vite
 - **Styling:** Tailwind CSS + Custom CSS tokens (P5R elements)
@@ -25,14 +25,14 @@ Developer portfolio interaktif yang sepenuhnya di-rebrand dengan estetika visual
 
 ---
 
-## 🚀 Prasyarat
+## Prasyarat
 
 - **Node.js:** Versi 22 atau lebih baru
 - **npm:** Versi 10 atau lebih baru
 
 ---
 
-## 💻 Cara Menjalankan Project Secara Lokal
+## Cara Menjalankan Project Secara Lokal
 
 ### 1. Clone Repository
 ```bash
@@ -71,7 +71,7 @@ npm run preview
 
 ---
 
-## 📂 Struktur Direktori
+## Struktur Direktori
 
 ```text
 .
@@ -92,17 +92,17 @@ npm run preview
 
 ---
 
-## 📝 Mengedit Konten Portfolio
+## Mengedit Konten Portfolio
 
-Untuk mengubah data portofolio tanpa merusak visual layout, cukup edit file berikut:
-- **Profil, Skills, Capabilities, & Achievements:** `src/data/portfolioData.js`
+Untuk mengubah data portofolio tanpa mengubah visual layout, Anda dapat menyesuaikan file berikut:
+- **Profil, Skills, Capabilities, dan Achievements:** `src/data/portfolioData.js`
 - **Metadata Card Projects:** `src/data/projectMeta.js`
 - **Detail Project (Showcase):** `src/data/projectDetailsData.js`
-- **Section Router & Registry:** `src/data/sectionRegistry.js`
+- **Section Router dan Registry:** `src/data/sectionRegistry.js`
 
 ---
 
-## 💬 Terminal Commands (Chat Widget)
+## Terminal Commands (Chat Widget)
 
 Terminal chat interaktif di pojok kanan bawah mendukung command-command berikut:
 - `help` — Menampilkan list command yang tersedia.
@@ -113,10 +113,10 @@ Terminal chat interaktif di pojok kanan bawah mendukung command-command berikut:
 
 ---
 
-## 🌐 Deploy
-Project ini dioptimalkan untuk di-deploy ke platform cloud statis seperti **Vercel** atau **Netlify**.
+## Deploy
+Project ini dioptimalkan untuk di-deploy ke platform cloud statis seperti Vercel atau Netlify.
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 Repository ini dimiliki oleh Abday Hafidz. All rights reserved.
